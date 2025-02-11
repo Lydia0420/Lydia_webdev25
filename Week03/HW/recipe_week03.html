@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Chocolate Cake Recipe | Simply Recipes</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #faf3e0;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+            padding-top: 80px;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: #f4e1e1;
+            padding: 20px;
+        }
+
+        .navbar {
+            display: flex;  
+            align-items: center;  
+            justify-content: space-between; 
+            max-width: 1200px;
+            height: 40px;
+            margin: auto;
+        }
+
+        .logo {
+            font-family: 'Dancing Script', cursive;
+            font-size: 24px;
+            font-weight: bold;
+            color: #5a2d0c;
+            margin: 0;
+        }
+
+        nav a {
+            display: inline-block;
+            margin-left: 15px;
+            padding: 10px;
+            text-decoration: none;
+            color: #5a2d0c;
+            font-weight: bold;
+            transition: background-color 0.3s ease, color 0.3s ease; /* 平滑过渡效果 */
+        }
+
+        nav a:hover {
+            background: #d81b60;
+            color: rgb(244, 236, 212);
+            border-radius: 5px;
+        }
+
+        nav a.active {
+            background: #d81b60; 
+            color: rgb(244, 236, 212);
+            padding: 30.5px 20px;
+            height: 100%;
+        }
+
+        .container {
+            text-align: left;
+            max-width: 1200px;
+            margin: auto;
+            display: block;
+        }
+
+        article, aside {
+            display: inline-block;
+            vertical-align: top;
+            padding: 20px;
+        }
+
+        article{
+            width: 68%;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0px 0px 5px rgba(0,0,0,0.1); 
+            text-align: left;
+        }
+
+        aside{
+            width: 20%;
+            background: #f9f9f9;
+            border-radius: 8px;
+        }
+
+        aside h2 {
+            font-size: 22px;
+            font-weight: bold;
+            color: #5a2d0c;
+            text-align: center;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #d81b60; /* 添加底部边框 */
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 48px;
+            color: #8B4513;
+            text-align: center;
+        }
+
+        img {
+            display: block;
+            margin: auto;
+            width: 80%;
+            border-radius: 10px;
+        }
+
+        aside img {
+            width: 100px;
+            height: 100px;
+            display: block;
+            margin: 10px auto;
+            border-radius: 10px;
+        }
+
+        aside ul {
+            list-style: none; 
+            padding: 0;
+            margin: 0;
+        }
+
+        aside ul li {
+            padding: 10px 0; 
+            border-bottom: 1px solid #ddd; 
+        }
+
+        aside ul li:last-child {
+            border-bottom: none; 
+        }
+
+        ul, ol {
+            margin-left: 20px;
+        }
+
+        ul li strong {
+            font-weight: bold;
+            color: #d81b60; 
+        }
+
+        ol li::marker {
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        .description {
+            text-align: center;
+        }
+    </style>
+ </head>
+<body>
+    <header>
+        <div class="navbar">
+            <h1 class="logo">Simply Recipes</h1>
+            <nav>
+                <a href="#">Home</a>
+                <a href="#">Recipe of the Day</a>
+                <a href="#" class="active">Recipes</a>
+                <a href="#">In the Kitchen</a>
+                <a href="#">Table Talk</a>
+                <a href="#">Holidays & Seasons</a>
+                <a href="#">About Us</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <article>
+            <h1>Chocolate Cake</h1>
+            <img src="https://i0.wp.com/www.wyldflour.com/wp-content/uploads/2019/04/Chocolate-Cake-with-Strawberry-Buttercream.jpg?w=1360&ssl=1" alt="Chocolate Cake">
+            <p class="description">This rich and moist chocolate cake is simple to make and incredibly delicious!</p>
+                
+            <section>
+                <h2>Ingredients</h2>
+                <ul>
+                    <li><strong>220g</strong> flour</li>
+                    <li><strong>65g</strong> unsweetened cocoa powder</li>
+                    <li><strong>400g</strong> granulated sugar</li>
+                    <li><strong>1</strong> teaspoon baking powder</li>
+                    <li><strong>1</strong> teaspoon baking soda</li>
+                    <li><strong>1</strong> teaspoon salt</li>
+                    <li><strong>2</strong> eggs</li>
+                    <li><strong>240ml</strong> milk</li>
+                    <li><strong>120ml</strong> vegetable oil</li>
+                    <li><strong>2</strong> teaspoons pure vanilla extract</li>
+                    <li><strong>240ml</strong> boiling water</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Instructions</h2>
+                <ol>
+                    <li>Preheat your oven to <strong>350°F (175°C) </strong>>and grease two 9-inch round cake pans.</li>
+                    <li>In a large mixing bowl, combine the flour, cocoa powder, sugar, baking powder, baking soda, and salt.</li>
+                    <li>Add the eggs, milk, vegetable oil, and vanilla extract. Mix until well combined.</li>
+                    <li>Carefully stir in the boiling water. The batter will be thin, but that's normal!</li>
+                    <li>Divide the batter evenly between the prepared pans.</li>
+                    <li>Bake for <strong>30-35</strong> minutes, or until a toothpick inserted into the center comes out clean.</li>
+                    <li>Let the cakes cool in the pans for <strong>10</strong> minutes, then transfer to a wire rack to cool completely.</li>
+                    <li>Frost with your favorite chocolate frosting and enjoy!</li>
+                </ol>
+            </section>
+        </article>
+
+        <aside>
+            <h2>Related Recipes</h2>
+            <ul style="list-style-type: none; padding: 0;">
+                <li><a href="#">Vanilla Cake</a><img src="https://bakerbynature.com/wp-content/uploads/2022/04/Golden-Vanilla-Cake-with-Vanilla-Frosting0-20.jpg" alt="Vanilla Cake"></li>
+                <li><a href="#">Red Velvet Cake</a><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTB4vEDL4909_h1iSyd50svpIMUBNmRGSjFUw&s" alt="Red Velvet Cake"></li>
+                <li><a href="#">Chocolate Muffins</a><img src="https://halicopteraway.com/wp-content/uploads/2024/07/olympic-village-chocolate-muffins.jpg" alt="Chocolate Muffins"></li>
+                <li><a href="#">Carrot Cake</a><img src="https://vikalinka.com/wp-content/uploads/2022/03/Carrot-Cake-14-Edit.jpg" alt="Carrot Cake"></li>
+                <li><a href="#">Strawberry Cheesecake</a><img src="https://chelsweets.com/wp-content/uploads/2024/06/cutting-into-strawberry-cheesecakev3-735x980.jpg" alt="Strawberry Cheesecake"></li>
+            </ul>
+        </aside>
+    </div>
+
+    <footer>
+        <p> 2025 Simply Recipes. </p>
+    </footer>
+
+</body>
+</html>
