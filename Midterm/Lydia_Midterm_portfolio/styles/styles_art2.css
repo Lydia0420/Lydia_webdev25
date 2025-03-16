@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Amatic+SC:wght@700&display=swap');
+
+body {
+    background: linear-gradient(to bottom, #fadfe6, #f6edde); 
+    font-family: 'Amatic SC', cursive;
+    color: #5a3e36;
+    text-align: center;
+    padding: 20px;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(209, 107, 134, 0.8); 
+    padding: 10px 20px;
+    z-index: 1000;
+    font-family: 'Georgia', serif;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.back-btn {
+    font-size: 1.2rem;
+    color: white;
+    text-decoration: none;
+    border-bottom: 2px solid white;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.back-btn:hover {
+    opacity: 0.6;
+}
+
+/* work */
+h1 {
+    font-family: 'Pacifico', cursive;
+    font-size: 3rem;
+    color: #d16b86;
+    text-shadow: 2px 2px 10px rgba(209, 107, 134, 0.5);
+    text-align: center;
+    margin: 80px auto 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.final-image {
+    width: 43%;
+    border-radius: 0;
+    box-shadow: 0 10px 25px rgba(209, 107, 134, 0.4);
+    transition: transform 0.3s ease;
+}
+.final-image:hover {
+    transform: scale(1.06);
+}
+
+.process-images {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 20px;
+    max-width: 650px; 
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.process-card {
+    background: rgb(67, 2, 15);
+    padding: 8px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Add a shadow to the element */
+    transition: transform 0.3s ease;
+    width: 200px; 
+    max-width: 180px; 
+    text-align: center;
+    margin: 0 auto;
+}
+
+.process-card:hover {
+    transform: translateY(-5px); /* moves the element 5px upward */
+}
+
+.process-card img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.process-card p {
+    font-size: 1rem;
+    margin-top: 5px;
+    color: #e1c4c8;
+}
+
+
+@media (max-width: 1024px) {
+    .final-image {
+        width: 60%; 
+    }
+    .process-images {
+        max-width: 620px;
+
+    }
+    .process-card {
+        width: 100%;
+    }
+
+    h1 {
+        font-size: 2.8rem;
+        width: 80%
+    }
+}
+
+@media (max-width: 768px) {
+    .final-image {
+        width: 70vw; 
+    }
+    .process-images {
+        display: grid;
+        grid-template-columns: 1fr; /* used to define the number and width of columns in a Grid layout */
+        max-width: 90vw;
+        gap: 10px;
+    }
+
+    h1 {
+        font-size: 2.2rem;
+        width: 90%
+    }
+
+}

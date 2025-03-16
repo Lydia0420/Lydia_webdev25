@@ -1,0 +1,217 @@
+/* Global Styles */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+/* we always fill the image container with the image, then size the box around it */
+img {
+  width: 100%;
+  height: auto;
+}
+
+/* Flexbox Simple Row Layouts */
+/* Base Styles */
+.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  /* some styles sp we can see our containers */
+  border: 1px solid purple;
+  background-color: rgba(255, 0, 255, 0.3);
+  min-height: 400px;
+}
+
+.item {
+  border: 1px solid cornflowerblue;
+  background-color: rgba(0, 0, 255, 0.3);
+  width: 23%;
+  height: 300px;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Atomic Styles */
+.wrap-reverse {
+  flex-wrap: wrap-reverse;
+}
+
+.justify-start {
+  justify-content: flex-start;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-around {
+  justify-content: space-around;
+}
+
+.justify-even {
+  justify-content: space-evenly;
+}
+
+.align-start {
+  align-items: flex-start;
+}
+
+.align-end {
+  align-items: flex-end;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.self-start {
+  align-self: flex-start;
+}
+
+.self-end {
+  align-self: flex-end;
+}
+
+.self-center {
+  align-self: center;
+}
+
+.self-stretch {
+  align-self: stretch;
+  /* We need to ditch the assigned
+  pixel height for stretch to work */
+  height: auto;
+}
+
+/* Media Queries are for Applying Different
+Styles on Different Size Screens */
+
+/* Always have media queries at the end of your CSS doc  */
+@media screen and (max-width: 768px) {
+  body {
+    background-color: chartreuse;
+  }
+
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .item {
+    width: 95%;
+    margin: 1rem auto;
+  }
+
+  .self-stretch {
+    height: 300px;
+    width: auto;
+  }
+}
+
+/*  Simple Classic Layout Using Flexbox */
+
+header {
+  display: flex;
+  width: 100%;
+  min-height: 100px;
+  background-color: aqua;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.grid-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: darkcyan;
+}
+
+.grid-item {
+  width: 23%;
+  margin: 1%;
+}
+
+.secondary-nav {
+  min-width: 25%;
+  background-color: aquamarine;
+}
+
+.menu {
+  /* remove the list defaults */
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.menu li {
+  border-bottom: 1px solid grey;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #111;
+  font-weight: 600;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu a:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+footer {
+  background-color: coral;
+  display: flex;
+  min-height: 100px;
+}
+
+/* Tablet */
+@media screen and (max-width: 1024px) {
+  .grid-item {
+    width: 48%;
+  }
+}
+
+/* Mobile */
+@media screen and (max-width: 768px) {
+  .wrapper {
+    flex-direction: column;
+  }
+
+  .secondary-nav {
+    order: 1;
+  }
+
+  .grid-container {
+    order: 2;
+    flex-direction: column;
+  }
+
+  .grid-item {
+    width: 95%;
+  }
+}

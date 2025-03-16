@@ -1,0 +1,325 @@
+@import url("https://fonts.googleapis.com/css2?family=Aldrich&display=swap");
+
+body {
+    background-color: white;
+    color: black;
+    margin: 0;
+    font-family: 'Georgia', serif;
+    text-align: center;
+    padding-top: 60px;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 10px 20px;
+    z-index: 1000;
+    text-align: left;
+}
+
+.back-btn {
+    font-size: 1.2rem;
+    color: black;
+    text-decoration: none;
+    border-bottom: 2px solid black;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.back-btn:hover {
+    opacity: 0.6;
+}
+
+/* work */
+.container {
+    max-width: 800px;
+    margin: 100px auto;
+    padding: 20px;
+}
+
+/* Final + intro */
+.final-intro {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    margin-top: 80px;
+    margin-bottom: 90px;
+    margin-left: 80px;
+}
+
+.final-menu {
+    flex: 1;
+    text-align: center;
+}
+
+.final-image {
+    width: 100%;
+    max-width: 390px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Add a shadow to the element */
+    filter: drop-shadow(-20px 25px 5px rgba(0, 0, 0, 0.4)); /* shadow effect to images */
+}
+
+.final-image:hover {
+    transform: scale(1.05) rotate(-2deg);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+    filter: drop-shadow(-15px 25px 30px rgba(0, 0, 0, 0.6));
+}
+
+.project-intro {
+    flex: 1;
+    text-align: left;
+}
+
+h1 {
+    font-size: 2.8rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    font-family: 'Aldrich', sans-serif;
+    margin-top: 100px;
+}
+
+.project-intro p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    max-width: 500px;
+}
+
+/* visual */
+.subtitle-images {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-bottom: 90px;
+}
+
+.subtitle-images img {
+    height: 100px;
+    object-fit: contain; /* Fill the container in original proportions without cutting */
+}
+
+/* Wireframes */
+.content-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.text-section {
+    flex: 1;
+    max-width: 400px;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    text-align: left;
+    margin-right: 50px;
+}
+
+.image-section {
+    display: flex;
+    gap: 0;  
+    align-items: center;
+}
+
+.graphic-img {
+    width: 100%;
+    max-width: 330px;
+    height: auto;
+    margin-right: 20px;
+}
+
+.wireframes {
+    display: flex;
+    flex-direction: column;  
+}
+
+.wireframes img {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    display: block;
+}
+
+
+/* second draft */
+.description {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 10px auto 30px;
+    line-height: 1.5;
+    color: #555;
+    margin-top: 20px;
+}
+
+.single-row-gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* used to define the number and width of columns in a Grid layout. */
+    gap: 15px;
+    max-width: 65vw;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.single-row-gallery img {
+    width: 100%;
+    border-radius: 3px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.single-row-gallery img:hover {
+    transform: scale(1.05);
+}
+
+/* flipbook */
+.flipbook-section {
+    text-align: center;
+    padding: 50px 0;
+}
+
+.flipbook-section h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    font-family: 'Aldrich', sans-serif;
+}
+
+.flipbook-section p {
+    font-size: 1.1rem;
+    max-width: 850px;
+    margin: 0 auto 30px;
+    line-height: 1.6;
+    color: #555;
+}
+
+.flipbook-container {
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
+}
+
+
+@media (max-width: 1324px) {
+    .single-row-gallery {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); 
+        gap: 12px;
+        min-width: 80vw;
+    }
+
+    /* used in Flexbox layouts to reorder elements visually for I want */
+    .single-row-gallery img:nth-child(4n + 1) { order: 1; } /* 1, 5, 9, 13 ... */
+    .single-row-gallery img:nth-child(4n + 2) { order: 2; } /* 2, 6, 10, 14 ... */
+    .single-row-gallery img:nth-child(4n + 3) { order: 3; } /* 3, 7, 11, 15 ... */
+    .single-row-gallery img:nth-child(4n + 4) { order: 4; } /* 4, 8, 12, 16 ... */
+
+    .flipbook-section p {
+        max-width: 80vw;
+    }
+
+    .content-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .text-section {
+        order: -1;   /* control the visual order of flex items */
+        width: 72vw;
+        max-width: 1000px;
+        margin-bottom: 20px;
+        margin-right: 0px;
+    }
+
+    .image-section {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .graphic-img {
+        width: 35vw;
+        max-width: 800px;
+    }
+
+    .wireframes img {
+        width: 20vw;
+        max-width: 800px;
+    
+    }
+}
+
+@media (max-width: 768px) {
+    .single-row-gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .final-intro {
+        flex-direction: column;
+        align-items: center;
+        width: 90%;
+        margin: 0 auto;
+        gap: 0px;
+    }  
+
+    .final-image {
+        width:60vw;
+        margin-top: 60px;
+    }
+
+    h1 {
+        text-align: center;
+    }
+    
+    .project-intro p {
+        max-width: 80vw;
+        margin-bottom: 50px;
+    }
+    
+    .image-section {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .graphic-img {
+        width: 60vw;
+        max-width: 800px;
+    }
+
+    .wireframes img {
+        width: 60vw;
+        max-width: 800px;
+    
+    }
+
+    .description {
+        max-width: 500px;
+    }
+
+    .subtitle-images {
+        flex-direction: column; 
+        align-items: center;
+        gap: 15px;
+        margin-top: 50px;
+    }
+
+    .subtitle-images img {
+        width: 100%;
+        max-width: 800px;
+        max-height: 150px;
+    }
+}
+
+
+@media (max-width: 600px) {
+    .single-row-gallery {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+

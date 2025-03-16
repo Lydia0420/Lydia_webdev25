@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Slackey&display=swap');
+
+body {
+    background-color: black;
+    color: white;
+    font-family: "Georgia", serif;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 10px 20px;
+    z-index: 1000;
+    display: flex;
+}
+
+.back-btn {
+    font-size: 1.2rem;
+    color: white;
+    text-decoration: none;
+    border-bottom: 2px solid white;
+    transition: opacity 0.3s ease-in-out;
+    margin-left: 20px;
+}
+
+.back-btn:hover {
+    opacity: 0.6;
+}
+
+/* work */
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 85%;
+    max-width: 1200px;
+}
+
+.text-content {
+    width: 50%;
+    text-align: left;
+}
+
+.title {
+    font-size: 2.8rem;
+    margin-bottom: 25px;
+    font-family: 'Slackey', cursive;
+}
+
+.description {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    opacity: 0.9;
+    margin-bottom: 20px;
+    color: rgb(181, 188, 194);
+}
+
+.play-btn {
+    display: inline-block;
+    padding: 12px 20px;
+    font-size: 1.2rem;
+    background-color: #ffcc00;
+    color: black;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background 0.3s ease-in-out;
+}
+
+.play-btn:hover {
+    background-color: #ffdd33;
+    color: rgb(217, 0, 0);
+    box-shadow: 0 6px 20px rgba(255, 204, 0, 0.6); /* Add a shadow to the element */
+    transform: scale(1.05);
+}
+
+video {
+    width: 460px;  
+    height: 460px; 
+    border-radius: 10px;
+    margin-top: 80px;
+}
+
+@media (max-width: 1024px) {
+    .container {
+        width: 90%;
+        max-width: 900px;
+        gap: 20px;
+    }
+    .text-content {
+        width: 55%;
+    }
+    .title {
+        font-size: 2.5rem;
+    }
+    .description {
+        font-size: 1.1rem;
+    }
+    .play-btn {
+        font-size: 1rem;
+        padding: 10px 18px;
+    }
+    video {
+        width: 400px;
+        height: 400px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .text-content {
+        width: 90%;
+    }
+    .title {
+        font-size: 2.2rem;
+        margin-top: 160px;
+    }
+    .description {
+        font-size: 1rem;
+    }
+    .play-btn {
+        font-size: 1rem;
+        padding: 10px 16px;
+    }
+    video {
+        width: 90%;
+        max-width: 400px;
+        height: auto;
+        margin-top: 20px;
+    }
+}

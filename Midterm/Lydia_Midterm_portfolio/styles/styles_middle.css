@@ -1,0 +1,174 @@
+body {
+    background-color: white;
+    color: black;
+    text-align: center;
+    font-family: "Cormorant Garamond", serif;
+    padding-top: 80px; 
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    width: 100%;
+    background: linear-gradient(to bottom, white, rgba(255, 255, 255, 0)); 
+}
+
+.logo a {
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 0px;
+    padding: 0;
+    margin: 0;
+    margin-right: 60px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    padding: 5px 10px;
+}
+
+/* work */
+h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+    margin: 50px auto 20px;
+    text-align: center;
+}
+
+.description {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto 30px;
+    line-height: 1.5;
+    color: #555;
+    margin-top: 20px;
+}
+
+.gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    max-width: 51vw;
+    margin: 50px auto;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    gap: 30px;
+    align-items: center;
+}
+
+.artwork {
+    display: flex;
+    justify-content: center;
+    flex: 1;  
+    max-width: 48%;
+}
+
+
+.artwork.left {
+    justify-content: flex-start;
+}
+
+.artwork.right {
+    justify-content: flex-end;
+}
+
+.artwork img {
+    height: 400px; 
+    width: auto;
+    max-width: 500px;
+    border-radius: 10px; 
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Add a shadow to the element */
+    transition: transform 0.3s ease-in-out;
+}
+.artwork img:hover {
+    transform: scale(1.03);
+}
+
+
+
+@media (max-width: 1200px) {
+    .gallery {
+        max-width: 80vw;
+    }
+    .row {
+        max-width: 90%; 
+    }
+    .artwork {
+        max-width: 47%; 
+    }
+    .artwork img {
+        height: auto; 
+        width: 100%; 
+    }
+
+    .description {
+        max-width: 600px; 
+        
+    }
+}
+
+@media (max-width: 900px) {
+    .row {
+        max-width: 85%;
+    }
+    .artwork {
+        max-width: 46%;
+    }
+}
+
+@media (max-width: 768px) {
+    .gallery {
+        max-width: 90vw;
+    }
+    .row {
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+    }
+    .artwork {
+        width: 90%;
+        max-width: 90%;
+    }
+
+    .artwork img {
+        width: 100%;
+        height: auto; 
+    }
+
+    .description {
+        max-width: 400px;
+       
+    }
+
+    h1 {
+        font-size: 2.2rem; 
+        max-width: 60%;
+        justify-content: center; 
+    }
+}
+
+

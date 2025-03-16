@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lydia's Portfolio</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <nav>
+        <div class="logo">
+             <a href="index.html">Lydia's Portfolio</a>
+        </div>
+        <ul>
+            <li><a href="#gallery">Work</a></li>
+            <li><a href="details/about.html">About</a></li>
+            <li><a href="details/contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- home page -->
+    <section class="intro">
+        <h1>A Journey in Lines, Colors, and Forms</h1>
+        <p id="typing-effect"></p>
+    </section>
+
+    <script>
+        // typing animation
+        const text = "Scroll down to explore...";
+        let index = 0;
+        function typeEffect() {
+            if (index < text.length) {
+                document.getElementById("typing-effect").innerHTML += text.charAt(index);
+                index++;
+                setTimeout(typeEffect, 100);
+            }
+        }
+        window.onload = typeEffect;
+    </script>
+
+    <!-- timeline -->
+    <section class="timeline">
+        <div class="stage" id="stage1">
+            <div class="bg"></div>
+            <a href="details/elementary.html">
+                <img src="images/elementary/01.jpg" class="original" alt="Elementary Art">
+            </a>
+        </div>
+        
+        <div class="stage" id="stage2">
+            <div class="bg"></div>
+            <a href="details/middle.html">
+                <img src="images/middle/02.jpg" class="original" alt="Middle School Art">
+            </a>
+        </div>
+
+        <div class="stage" id="stage3">
+            <div class="bg"></div>
+            <a href="details/high.html">
+                <img src="images/high/03.jpg" class="original" alt="High School Art">
+            </a>
+        </div>
+
+        <div class="stage" id="stage4">
+            <div class="bg"></div>
+            <a href="details/university.html">
+                <img src="images/university/04.jpg" class="original" alt="University Art">
+            </a>
+        </div>
+    </section>
+
+    <!-- quote -->
+    <section class="quote-page">
+        <p class="typing line1">Illustrations are the mirrors</p>
+        <p class="typing line2">Emotions are the reflection</p>
+        <p class="typing line3">The purpose of art is to make the invisible visible.</p>
+    </section>
+
+    <!-- image -->
+    <section id="gallery" class="art-gallery">
+        <div class="artwork img1"><a href="details/art1.html"><img src="images/gallery/art1.png" alt="Artwork 1"></a></div>
+        <div class="artwork img2"><a href="details/art2.html"><img src="images/gallery/art2.png" alt="Artwork 2"></a></div>
+        <div class="artwork img3"><a href="details/art3.html"><img src="images/gallery/art3.jpg" alt="Artwork 3"></a></div>
+        <div class="artwork img4"><a href="details/art4.html"><img src="images/gallery/art4.JPG" alt="Artwork 4"></a></div>
+        <div class="artwork img5"><a href="details/art5.html"><img src="images/gallery/art5.jpg" alt="Artwork 5"></a></div>
+        <div class="artwork img6"><a href="details/art6.html"><img src="images/gallery/art6.jpg" alt="Artwork 6"></a></div>
+        <div class="artwork img7"><a href="details/art7.html"><img src="images/gallery/art7.png" alt="Artwork 7"></a></div>
+        <div class="artwork img8"><a href="details/art8.html"><img src="images/gallery/art8.jpg" alt="Artwork 8"></a></div>
+        <div class="artwork img9"><a href="details/art9.html"><img src="images/gallery/art9.jpg" alt="Artwork 9"></a></div>
+        <div class="artwork img10"><a href="details/art10.html"><img src="images/gallery/art10.jpg" alt="Artwork 10"></a></div>
+        <div class="artwork img11"><a href="details/art11.html"><img src="images/gallery/art11.png" alt="Artwork 11"></a></div>
+        <div class="artwork img12"><a href="details/art12.html"><img src="images/gallery/art12.jpg" alt="Artwork 12"></a></div>
+        <div class="artwork img13"><a href="details/art13.html"><img src="images/gallery/art13.png" alt="Artwork 13"></a></div>
+        <div class="artwork img14"><a href="details/art14.html"><img src="images/gallery/art14.jpg" alt="Artwork 14"></a></div>
+        <div class="artwork img15"><a href="details/art15.html"><img src="images/gallery/art15.jpg" alt="Artwork 15"></a></div>
+        <div class="artwork img16"><a href="details/art16.html"><img src="images/gallery/art16.jpg" alt="Artwork 16"></a></div>
+        <div class="artwork img17"><a href="details/art17.html"><img src="images/gallery/art17.jpg" alt="Artwork 17"></a></div>
+    </section>
+
+    
+   
+</body>
+</html>

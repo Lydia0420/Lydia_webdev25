@@ -1,0 +1,112 @@
+body {
+    background-color: rgb(65, 3, 3);
+    color: rgb(251, 210, 210);
+    font-family: "Georgia", serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+    overflow: hidden;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: none;
+    padding: 10px 20px;
+    z-index: 1000;
+    display: flex;
+}
+
+.back-btn {
+    font-size: 1.2rem;
+    color: white;
+    text-decoration: none;
+    border-bottom: 2px solid white;
+    transition: opacity 0.3s ease-in-out;
+    margin-left: 20px;
+}
+
+.back-btn:hover {
+    opacity: 0.6;
+}
+
+/* work */
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 75%;
+    max-width: 1200px;
+}
+
+.text-content {
+    width: 45%;
+    text-align: left;
+}
+
+.title {
+    font-size: 2.4rem;
+    margin-bottom: 10px;
+    margin-top: 80px;
+}
+
+.description {
+    font-size: 1.1rem;
+    line-height: 1.4;
+    opacity: 0.7;
+    margin-bottom: 30px;
+}
+
+.main-artwork img {
+    width: 100%;
+    max-width: 430px;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.2); /* Add a shadow to the element */
+    transition: transform 0.3s ease-in-out;
+}
+
+.main-artwork img:hover {
+    transform: scale(1.05);
+}
+
+.process-gallery {
+    width: 35%;
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    gap: -100px;
+}
+
+.step {
+    width: 18vw;
+    max-width: 150px;
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.step:hover {
+    transform: scale(1.1);
+    opacity: 0.9;
+}
+
+.step:nth-child(odd) {
+    align-self: flex-start;
+    transform: rotate(-5deg) translateY(10px); /* Shift the image down 10px */
+    margin-left: 10%;
+}
+
+.step:nth-child(even) {
+    align-self: flex-end;
+    transform: rotate(5deg) translateY(10px);
+    margin-right: 10%;
+}
+
+.step:hover {
+    transform: scale(1.1) !important;
+    opacity: 0.9;
+    z-index: 10;
+}
