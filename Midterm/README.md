@@ -1,5 +1,8 @@
 # Midterm Website Report
 
+## Website Link
+- https://dazzling-griffin-fefa89.netlify.app/
+
 ## 1.Demo site and show each page(layouts)
 - Home page (timeline - 4 Stages)
 - Work (gallery)
