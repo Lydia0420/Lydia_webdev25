@@ -111,3 +111,16 @@ nav {
     font-style: italic;
     text-align: center;
 }
+
+
+@media (max-width: 1024px) {
+    .container {
+        padding: 80px;
+    }
+}
+
+@media (max-width: 768px) {    
+    .description {
+        margin-bottom: 30px;
+    }
+}

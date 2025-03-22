@@ -54,6 +54,7 @@ nav {
     border-radius: 15px;
     box-shadow: -13px 20px 20px rgba(172, 1, 1, 0.3);
     transition: transform 0.3s ease-in-out;
+    margin-top: 0%;
 }
 
 .artwork:hover {
@@ -65,6 +66,7 @@ nav {
     width: 50%;
     text-align: left;
     margin-left: 60px;
+    margin-bottom: 0%;
 }
 
 .art-title {
@@ -105,17 +107,22 @@ nav {
 
 @media (max-width: 1024px) {
     .art-container {
+        display: flex;
         flex-direction: column;
-        text-align: center;
+        align-items: center;
+        gap: 20px;
     }
 
     .artwork {
         width: 80%;
+        margin-top: 80px;
     }
 
     .art-info {
         width: 90%;
         text-align: center;
+        margin-left: 0;
+        margin-bottom: 40px;
     }
 
     .art-title::after {

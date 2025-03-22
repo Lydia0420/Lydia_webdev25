@@ -108,9 +108,14 @@ h1 {
 
 
 @media (max-width: 768px) {
+    body {
+        padding-top: 70px; 
+    }
+
     .about-container {
         flex-direction: column;
         text-align: center;
+        margin: 0px auto;
     }
 
     .polaroid {

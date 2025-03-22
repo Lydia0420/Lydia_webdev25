@@ -32,6 +32,6 @@ From childhood to the present,focusing on a different art form at each stage of 
 
 ## 4.Fuctions to Add
 - Footer with my social media links
-- Hover effect on gallery artworks (Show information on hover)
+- Hover effect on gallery artworks (Show information on hover) —— Have done
 - Navigation Enhancement: Dropdown for “Work”
 

@@ -173,6 +173,10 @@ nav {
     .final-images-right img {
         width: 320px; 
     }
+
+    .process h2 {
+        margin-top: 150px;
+    }
 }
 
 @media (max-width: 768px) {
@@ -200,5 +204,9 @@ nav {
         width: 70vw;
         max-width: 320px;
         margin-bottom: 15px;
+    }
+
+    .process h2 {
+        margin-top: 100px;
     }
 }

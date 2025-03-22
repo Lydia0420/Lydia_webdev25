@@ -235,6 +235,10 @@ nav {
         grid-template-columns: repeat(2, 1fr);
     }
 
+    .final-logo {
+        margin-bottom: 70px; 
+    }
+
     .final-logo-container {
         flex-direction: column; 
         align-items: center;
@@ -253,6 +257,10 @@ nav {
 
     .logo-grid img {
         max-height: 200px;
+    }
+
+    .final-logo {
+        margin-bottom: 50px; 
     }
 
     .final-logo p {

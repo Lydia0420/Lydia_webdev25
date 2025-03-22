@@ -114,7 +114,7 @@ h1 {
 
 @media (max-width: 768px) {
     .final-image {
-        width: 70vw; 
+        width: 75vw; 
     }
     .process-images {
         display: grid;

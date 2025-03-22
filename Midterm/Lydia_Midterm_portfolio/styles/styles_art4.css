@@ -81,14 +81,17 @@ nav {
 @media (max-width: 1024px) {
     .art-container {
         max-width: 90vw;
+        padding-top: 150px;
     }
     .art-frame img {
         width: 50vw;
     }
     .art-title {
-        font-size: 1.9rem;
+        font-size: 2.2rem;
+        margin-top: 80px;
     }
     .art-description {
+        font-size: 1.4rem;
         max-width: 450px;
     }
 }
@@ -98,12 +101,16 @@ nav {
         max-width: 95vw;
     }
     .art-frame img {
-        width: 60vw;
+        width: 70vw;
     }
     .art-title {
-        font-size: 1.8rem;
+        font-size: 2.0rem;
+        margin-top: 50px;
     }
     .art-description {
         max-width: 75%;
+    }
+    .art-description {
+        font-size: 1.3rem;
     }
 }

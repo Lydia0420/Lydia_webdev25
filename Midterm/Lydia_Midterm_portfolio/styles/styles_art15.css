@@ -155,17 +155,21 @@ nav {
 
 @media (max-width: 768px) {
     .container {
+        display: flex;
+        justify-content: center;
         flex-direction: column;
         align-items: center;
         text-align: center;
         width: 95vw;
-       
+        margin: 0 auto;
     }
 
     .text-content {
         width: 100%;
         align-items: center;
         text-align: center;
+        margin: 0 auto;
+        margin-left: 0px;
     }
 
     .title {
@@ -177,17 +181,24 @@ nav {
 
     .description {
         margin-bottom: 40px;
-        width: 50vw;
-        max-width: 480px;
+        width: 70vw;
+        max-width: 550px;
         text-align: center;
         margin: 0 auto;
         margin-bottom: 40px;
         font-size: 1rem;
     }
 
+    .main-artwork {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
     .main-artwork img {
-        width: 90%;
+        width: 80%;
         max-width: 85vw;
+        margin-left: 0px;
     }
 
     .process-gallery {

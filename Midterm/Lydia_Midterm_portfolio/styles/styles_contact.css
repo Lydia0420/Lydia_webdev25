@@ -109,6 +109,9 @@ button:hover {
 }
 
 @media (max-width: 1024px) {
+    .contact-container {
+        margin: 70px auto;
+    }
     button {
         width: 90%;
     }

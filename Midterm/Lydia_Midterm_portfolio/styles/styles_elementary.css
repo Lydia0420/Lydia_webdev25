@@ -101,6 +101,7 @@ h1 {
 @media (max-width: 1024px) {
     .elementary-images {
         column-count: 2; 
+        max-width: 75vw;
     }
 
     .description {
@@ -112,6 +113,7 @@ h1 {
 @media (max-width: 768px) {
     .elementary-images {
         column-count: 1; 
+        max-width: 70vw;
     }
 
     .description {

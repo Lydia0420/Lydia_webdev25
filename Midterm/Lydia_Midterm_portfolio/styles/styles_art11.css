@@ -249,6 +249,10 @@ p {
         gap: 22px;
     }
 
+    .low-fi-section {
+        margin-top: 40px;
+    }
+
     .content-container {
         flex-direction: column;
         align-items: center;
@@ -291,6 +295,10 @@ p {
     .wireframe-vertical {
         width: 90%; 
         max-width: 350px;
+    }
+
+    .low-fi-section {
+        margin-top: 30px;
     }
 
     .video-container {

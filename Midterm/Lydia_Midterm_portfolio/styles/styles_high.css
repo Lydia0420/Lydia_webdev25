@@ -69,6 +69,7 @@ h1 {
     gap: 40px;
     max-width: 64vw; 
     margin: 50px auto;
+    justify-content: center;
 }
 
 .row {
@@ -135,16 +136,69 @@ h1 {
 }
 
 
+@media (max-width: 1200px) {
+    .gallery {
+        max-width: 80vw;
+        justify-content: center;  
+        align-items: center;
+        gap: 25px; 
+    }
+    .row {
+        max-width: 90%; 
+        align-items: center;
+        justify-content: center;  
+    }
+
+    .row.two-items {
+        justify-content: center;  
+    }
+
+    .row.three-items {
+        justify-content: center;  
+    }
+
+    .artwork {
+        max-width: 47%; 
+    }
+    .artwork img {
+        height: auto; 
+        width: 100%; 
+    }
+
+    .description {
+        max-width: 600px; 
+        
+    }
+}
+
+@media (max-width: 900px) {
+    .row {
+        max-width: 85%;
+    }
+    .artwork {
+        max-width: 46%;
+    }
+}
+
 
 @media (max-width: 768px) {
     .gallery {
-        max-width: 80vw;
+        max-width: 90vw;
+        gap: 25px;
     }
     .row {
         flex-direction: column;
         align-items: center;
-        gap: 40px;
     }
+
+    .row.two-items {
+        gap: 25px;
+    }
+
+    .row.three-items {
+        gap: 25px;
+    }
+
     .artwork {
         width: 90%;
         max-width: 90%;
@@ -152,5 +206,16 @@ h1 {
     .artwork img {
         width: 100%;
         height: auto;
+    }
+
+    .description {
+        max-width: 400px;
+       
+    }
+
+    h1 {
+        font-size: 2.2rem; 
+        max-width: 60%;
+        justify-content: center; 
     }
 }
