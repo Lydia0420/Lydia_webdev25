@@ -1,0 +1,316 @@
+@import url('https://fonts.googleapis.com/css2?family=Emilys+Candy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Moulpali&display=swap');
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  display: flex;              
+  justify-content: center;     
+  align-items: center; 
+}
+
+body {
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    font-family: 'Cormorant Garamond', serif;
+    cursor: url('../images/cursor/100.png') 16 16, auto;
+}
+
+a:hover,
+button:hover,
+.artwork:hover {
+  cursor: url('../images/cursor/hover.png'), auto;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    width: 100vw;
+    max-width: none;
+    box-sizing: border-box;
+}
+
+.logo {
+    font-size: 18px;        
+    font-weight: bold;
+    white-space: nowrap; 
+    margin-left: 0px; 
+}
+
+.logo a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 0px;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline-block;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    display: block;
+    padding: 5px 0px 5px 20px;
+    transition: opacity 0.3s ease-in-out;
+}
+
+nav ul li a:hover {
+    opacity: 0.6;
+}
+
+
+
+/* dropdown menu */
+nav .dropdown {
+    position: relative;
+}
+
+nav .dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 200px;
+  background-color: rgb(223, 237, 248);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding: 13px 0;
+  z-index: 999;
+  border-radius: 10px;
+}
+
+@media (min-width: 430px) {
+  nav .dropdown:hover .dropdown-content {
+    display: block;
+    border-radius: 10px;
+  }
+}
+
+nav .sub-dropdown {
+  margin-bottom: 10px;
+}
+
+nav .sub-artwork {
+  display: none;
+  padding-left: 20px;
+}
+
+.sub-dropdown.open .sub-artwork {
+  display: block;
+}
+
+nav .sub-header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+nav .sub-name {
+  background: none;
+  border: none;
+  color: black;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 17px;
+  padding: 13px 20px;
+  cursor: pointer;
+  text-align: left;
+  width: auto;
+  flex-grow: 1;
+}
+
+nav .sub-header:hover {
+  background-color: none;
+  border-radius: 10px;
+}
+
+
+nav .sub-artwork a {
+  display: block;
+  padding: 0px 20px;
+  font-size: 15px;
+  color: rgb(71, 105, 123);
+  text-decoration: none;
+  font-family: 'Moulpali', sans-serif;
+}
+
+nav .sub-artwork a:hover {
+  background-color: #fdfdfd;
+  border-radius: 10px;
+}
+
+nav .sub-name:hover {
+    background: white;
+    border-radius: 10px;
+    color: black;
+}
+
+
+/* Default image hidden */
+nav .decoration {
+  display: none;
+  width: 25px;
+  height: auto;
+  margin-left: 10px;
+  vertical-align: middle;
+  transition: opacity 0.3s ease;
+  margin-right: 10px;
+}
+
+nav .sub-dropdown.open .decoration {
+  display: inline-block;
+  opacity: 1;
+}
+
+
+
+
+/* work */
+.contact-container {
+    max-width: 700px;
+    padding: 20px;
+    text-align: center;
+    height: 100vh;
+    margin-top: 260px;
+}
+
+.contact-container h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    background: linear-gradient(to right, #839ce7, #311551); 
+    -webkit-background-clip: text;  /* create text gradient effect */
+    color: transparent;
+    font-family: 'Emilys Candy', cursive;
+}
+
+.contact-container p {
+  font-size: 1.1rem;
+  white-space: normal;
+  width: 700px;
+}
+
+.contact-info a {
+    font-size: 1.5rem;
+    color: #637ed0;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+.contact-info a:hover {
+    color: #4a2c6c;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+    width: 700px;
+}
+
+input, textarea {
+    width: 96%;
+    padding: 10px;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 5px;
+    background: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+}
+
+button {
+    width: 100%;
+    background: #839ce7;
+    color: black;
+    padding: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+    transition: color 0.1s ease;
+    border-radius: 10px;
+}
+
+button:hover {
+    background: #4a2c6c;
+    color: rgb(208, 195, 231);
+}
+
+@media (max-width: 1024px) {
+    .contact-container {
+        margin: 70px auto;
+    }
+    button {
+        width: 90%;
+    }
+
+    input, textarea {
+        width: 86%;
+    }
+}
+
+@media (max-width: 768px) {
+    button {
+        width: 80%;
+    }
+
+    input, textarea {
+        width: 76%;
+    }
+
+    .contact-container {
+      max-width: 600px;
+      padding: 20px;            
+      justify-content: center;     
+      align-items: center; 
+      height: 100vh;
+      margin-top: 300px;
+  }
+}
+
+
+@media (max-width: 500px) {
+  .contact-container {
+    max-width: 100vw;
+    padding: 20px;            
+    justify-content: center;     
+    align-items: center; 
+    height: 100vh;
+    margin-top: 300px;
+  }
+  .contact-container p {
+    font-size: 1.3rem;
+    white-space: normal;
+    width: 350px;
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 30px;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+    width: 100vw;
+  }
+}

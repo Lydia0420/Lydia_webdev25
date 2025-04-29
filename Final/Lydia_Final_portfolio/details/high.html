@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>High School Artwork</title>
+    <link rel="stylesheet" href="../styles/styles_high.css">
+</head>
+
+<body>
+    <nav>
+        <div class="logo">
+            <a href="../index.html">Lydia's Portfolio</a>
+        </div>
+        <ul>
+            <li><a href="../index.html#gallery">Work</a></li>
+            <li><a href="../details/about.html">About</a></li>
+            <li><a href="../details/contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <h1>High School Artwork</h1>
+    <p class="description">
+        During the summer before high school, I discovered a deep fascination with oil painting.  
+        It was a new language, distinct from the delicate fluidity of ink, yet equally expressive.  
+        I began with simple studies, carefully replicating masterworks to understand composition, color harmony, and texture.  
+        As my confidence grew, so did my canvases, expanding from small exercises to larger, more personal creations.
+        I embrace the meditative process of bringing an idea to life.
+    </p>
+
+    <div class="gallery">
+        <div class="row two-items">
+            <div class="artwork"><img src="../images/high/high_01.png" alt="Artwork 1"></div>
+            <div class="artwork"><img src="../images/high/high_02.jpg" alt="Artwork 2"></div>
+        </div>
+        <div class="row three-items">
+            <div class="artwork left"><img src="../images/high/high_03.png" alt="Artwork 3"></div>
+            <div class="artwork middle"><img src="../images/high/high_04.jpg" alt="Artwork 4"></div>
+            <div class="artwork right"><img src="../images/high/high_05.jpg" alt="Artwork 5"></div>
+        </div>
+        <div class="row two-items">
+            <div class="artwork"><img src="../images/high/high_06.jpg" alt="Artwork 6"></div>
+            <div class="artwork"><img src="../images/high/high_07.jpg" alt="Artwork 7"></div>
+        </div>
+        <div class="row three-items">
+            <div class="artwork left"><img src="../images/high/high_08.JPG" alt="Artwork 8"></div>
+            <div class="artwork middle"><img src="../images/high/high_09.jpg" alt="Artwork 9"></div>
+            <div class="artwork right"><img src="../images/high/high_10.png" alt="Artwork 10"></div>
+        </div>
+    </div>
+
+
+    <!-- carousel -->
+    <div id="carousel-overlay" class="carousel-overlay hidden">
+        <button id="close-carousel">✕</button>
+        <div class="carousel-container"></div>
+    </div>
+      
+      <script>
+        document.addEventListener("DOMContentLoaded", () => {
+          const galleryImages = document.querySelectorAll('.artwork img');
+          const overlay = document.getElementById('carousel-overlay');
+          const container = document.querySelector('.carousel-container');
+        
+          let allImagePaths = Array.from(galleryImages).map(img => img.getAttribute("src"));
+          let currentCenter = 0;
+          let hasEntered = false;
+        
+          function layoutCards(centerIndex, isInitial = false) {
+            const frames = container.querySelectorAll('.card-frame');
+        
+            if (!hasEntered) {
+              frames.forEach((frame, i) => {
+                frame.style.transition = 'none';
+                frame.style.transform = `rotate(0deg) translateX(0px)`;
+                frame.style.zIndex = 1;
+                frame.classList.remove('active', 'dimmed');
+              });
+        
+              setTimeout(() => {
+                frames.forEach((frame, i) => {
+                  const offset = i - centerIndex;
+                  frame.style.transition = 'transform 0.6s ease, filter 0.4s ease';
+                  frame.style.transform = `rotate(${offset * 5}deg) translateX(${offset * 130}px)`;
+                  frame.style.zIndex = 10 - Math.abs(offset);
+        
+                  frame.onclick = () => {
+                    currentCenter = i;
+                    layoutCards(i, false);
+                  };
+                });
+              }, 10);
+        
+              hasEntered = true;
+              return;
+            }
+        
+            frames.forEach((frame, i) => {
+              const offset = i - centerIndex;
+              frame.style.transition = 'transform 0.4s ease, filter 0.3s ease';
+              frame.style.transform = `rotate(${offset * 5}deg) translateX(${offset * 130}px)`;
+              frame.style.zIndex = 10 - Math.abs(offset);
+        
+              frame.classList.remove('active', 'dimmed');
+              if (!isInitial) {
+                if (i === centerIndex) {
+                  frame.classList.add('active');
+                } else {
+                  frame.classList.add('dimmed');
+                }
+              }
+        
+              frame.onclick = () => {
+                currentCenter = i;
+                layoutCards(i, false);
+              };
+            });
+          }
+        
+          function openCarousel(centerIndex) {
+            overlay.classList.remove('hidden');
+            container.innerHTML = `<button id="close-carousel">✕</button>`;
+            allImagePaths.forEach((src, i) => {
+              const wrapper = document.createElement('div');
+              wrapper.className = 'card-frame';
+        
+              const card = document.createElement('img');
+              card.src = src;
+              card.className = 'carousel-card';
+              card.dataset.index = i;
+        
+              wrapper.appendChild(card);
+              container.appendChild(wrapper);
+            });
+        
+            layoutCards(centerIndex, true);
+        
+            document.getElementById("close-carousel").onclick = () => {
+              overlay.classList.add("hidden");
+              container.innerHTML = "";
+              hasEntered = false;
+            };
+          }
+        
+          galleryImages.forEach((img, index) => {
+            img.addEventListener('click', () => {
+              currentCenter = index;
+              openCarousel(index);
+            });
+          });
+        });
+
+        document.querySelector(".logo a").addEventListener("click", (e) => {
+        e.preventDefault(); 
+        window.location.href = "../index.html#return"; 
+        });
+     </script>
+</body>
+</html>

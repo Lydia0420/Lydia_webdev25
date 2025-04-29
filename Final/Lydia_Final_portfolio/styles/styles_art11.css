@@ -1,0 +1,327 @@
+@import url("https://fonts.googleapis.com/css2?family=Borel&display=swap");
+
+body {
+    background-color: black;
+    color: white;
+    font-family: "Georgia", serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 10px 20px;
+    z-index: 1000;
+    display: flex;
+}
+
+.back-btn {
+    font-size: 1.2rem;
+    color: white;
+    text-decoration: none;
+    border-bottom: 2px solid white;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.back-btn:hover {
+    opacity: 0.6;
+}
+
+/* work */
+header {
+    margin-top: 80px;
+    padding: 10px;
+}
+
+h1 {
+    font-size: 4rem;
+    margin-bottom: 10px;
+    font-family: 'Borel', cursive;
+    font-weight: bold;
+    color: blanchedalmond;
+}
+
+p {
+    font-size: 1.2rem;
+    margin: 0 auto;
+    line-height: 1.5;
+    color: rgb(178, 182, 182);
+    width: 70vw;
+}
+
+
+/* wireframe */
+.wireframe-section {
+    margin-top: 40px;
+    padding: 20px;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 20px;
+    padding: 20px;
+}
+
+.wireframe-1 {
+    width: 43%;
+}
+
+.wireframe-vertical {
+    display: flex;
+    flex-direction: column;
+    gap: 0; 
+    width: 35%;
+}
+
+.wireframe-vertical img {
+    width: 100%;
+    display: block;
+}
+
+.wireframe-1, .wireframe-vertical {
+    margin-right: 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Low-Fi */
+.low-fi-section {
+    margin-top: 80px;
+    padding: 20px;
+}
+
+h2 {
+    font-size: 2.5rem;
+    font-family: 'Borel', cursive;
+}
+
+h3 {
+    font-size: 2rem;
+    margin-top: 30px;
+    color: blanchedalmond;
+}
+
+.low-fi-section p {
+    font-size: 1.2rem;
+    max-width: 900px;
+    margin: 0 auto;
+    line-height: 1.5;
+    margin-bottom: 100px;
+}
+
+/* version */
+.content-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+    padding: 20px;
+}
+
+.video-container {
+    max-width: 30%;
+    width:30%;
+}
+
+.video-container iframe {
+    border: none; 
+}
+
+video {
+    width: 100%;
+    border-radius: 5px;
+}
+
+/* version 1 */
+.gallery-8col {
+    column-count: 8;  /* divides content into a specified number of columns */
+    column-gap: 20px;
+    max-width: 60%;
+}
+
+.gallery-8col img {
+    border-radius: 10px; 
+}
+
+/* version 2 */
+.gallery-5col {
+    column-count: 5;
+    column-gap: 20px;
+    max-width: 50%;
+}
+
+.gallery-5col img {
+    border-radius: 20px; 
+}
+
+.image-gallery img {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+}
+
+/* version 3 */
+.grid-layout {
+    display: grid; 
+    grid-template-columns: repeat(8, 1fr); /* used to define the number and width of columns in a Grid layout. */
+    gap: 15px;
+    max-width: 65%;
+}
+
+.grid-layout img {
+    border-radius: 13px; 
+}
+
+.version p {
+    color: rgb(175, 163, 147); 
+    max-width: 750px; 
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+}
+
+/* Final */
+.final-section {
+    margin-top: 80px;
+    padding: 20px;
+}
+
+p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.5;
+}
+
+.final-section .video-container {
+    width:60vw;
+    max-width: 600px;
+    margin: 20px auto;
+    margin-bottom: 150px;
+}
+
+.final-section video {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.masonry-layout {
+    column-count: 8; 
+    column-gap: 17px;
+    width: 70vw;
+    margin: 20px auto;
+}
+
+.masonry-layout img {
+    width: 100%;
+    display: block;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; 
+        align-items: center; 
+        text-align: center;
+    }
+    
+    .wireframe-1,
+    .wireframe-vertical {
+        width: 90%; 
+        max-width: 400px; 
+        margin-bottom: 20px;
+        gap: 22px;
+    }
+
+    .low-fi-section {
+        margin-top: 40px;
+    }
+
+    .content-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .video-container {
+        order: -1; 
+        width: 60vw;
+        max-width: 600px;
+    }
+
+    .gallery-8col {
+        column-count: 5;
+        max-width: 85%;
+    }
+
+    .gallery-5col {
+        column-count: 4;
+        max-width: 80%;
+    }
+
+    .grid-layout {
+        grid-template-columns: repeat(5, 1fr); 
+        max-width: 85%;
+    }
+
+    .masonry-layout {
+        column-count: 3; 
+        width: 80%;
+    }
+}
+
+
+@media (max-width: 500px) {
+    .container {
+        width: 95%;
+    }
+
+    .wireframe-1,
+    .wireframe-vertical {
+        width: 90%; 
+        max-width: 350px;
+    }
+
+    .low-fi-section {
+        margin-top: 30px;
+    }
+
+    .video-container {
+        width: 70vw;
+    }
+
+    .gallery-8col {
+        column-count: 3;
+        max-width: 85%;
+    }
+
+    .gallery-5col {
+        column-count: 3;
+        max-width: 85%;
+    }
+
+    .grid-layout {
+        grid-template-columns: repeat(3, 1fr); 
+        max-width: 85%;
+    }
+
+    .masonry-layout {
+        column-count: 2; 
+        width: 85%;
+    }
+}

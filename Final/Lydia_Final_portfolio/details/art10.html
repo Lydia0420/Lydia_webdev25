@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artwork 10 - Snake</title>
+    <link rel="stylesheet" href="../styles/styles_art10.css">
+</head>
+<body>
+    <nav>
+        <a href="../index.html#gallery" class="back-btn">← Back </a>
+    </nav>
+
+    <!-- work -->
+    <section class="container">
+        <div class="text-content">
+            <h1 class="title">Chinese New Year</h1>
+            <p class="description">
+                I Created this printmaking to mark the Year of the Snake.
+                Just as a snake sheds its skin, we grow by embracing change, leaving behind the old and stepping into something new. 
+            </p>
+            <div class="main-artwork">
+                <img src="../images/snake/art10.jpg" alt="Final Artwork">
+            </div>
+        </div>
+
+        <div class="process-gallery">
+            <img src="../images/snake/process1.jpg" class="step step-left" alt="Step 1">
+            <img src="../images/snake/process2.jpg" class="step step-right" alt="Step 2">
+            <img src="../images/snake/process3.jpg" class="step step-left" alt="Step 3">
+            <img src="../images/snake/process4.jpg" class="step step-right" alt="Step 4">
+            <img src="../images/snake/process5.jpg" class="step step-left" alt="Step 5">
+            <img src="../images/snake/process6.jpg" class="step step-right" alt="Step 6">
+        </div>
+
+    </section>
+
+    <script>
+        document.querySelector(".back-btn").addEventListener("click", (e) => {
+          e.preventDefault();
+          window.location.href = "../index.html#return-from-gallery";
+        });
+    </script>
+</body>
+</html>

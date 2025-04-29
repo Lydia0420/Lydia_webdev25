@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Carattere&display=swap');
+
+body {
+    background-color: #FCEAE8; 
+    color: #543310;
+    font-family: "Patrick Hand", sans-serif; 
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: none;
+    padding: 10px 20px;
+    z-index: 1000;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.back-btn {
+    font-size: 1.2rem;
+    color: black;
+    text-decoration: none;
+    border-bottom: 2px solid black;
+    transition: opacity 0.3s ease-in-out;
+    font-family: "Georgia", serif;
+    text-align: left;
+}
+
+.back-btn:hover {
+    opacity: 0.6;
+}
+
+/* work */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    padding: 40px;
+}
+
+.text-content {
+    text-align: center;
+    max-width: 600px;
+}
+
+.title {
+    font-size: 2.5rem;
+    animation: wave-text 2s infinite ease-in-out;
+    font-family: 'Carattere', cursive;
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+}
+
+@keyframes wave-text {
+    0%, 100% { transform: rotate(0deg); }
+    50% { transform: rotate(-3deg); }
+}
+
+.main-artwork img {
+    width: 320px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(255, 183, 213, 0.6);
+    transition: transform 0.3s ease-in-out;
+}
+
+.main-artwork img:hover {
+    transform: scale(1.15);
+}
+
+.process-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    max-width: 700px;
+    margin-top: 15px;
+}
+
+.process-item {
+    position: relative;
+    display: inline-block;
+    transform: rotate(-5deg);
+    transition: transform 0.3s ease-in-out;
+}
+
+.process-item:nth-child(even) {
+    transform: rotate(5deg);
+}
+
+.process-item:hover {
+    transform: scale(1.1) rotate(0deg);
+}
+
+.process-item img {
+    width: 130px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.caption {
+    display: block;
+    font-size: 14px;
+    color: #754c24;
+    margin-top: 5px;
+    font-style: italic;
+    text-align: center;
+}
+
+
+@media (max-width: 1024px) {
+    .container {
+        padding: 80px;
+    }
+}
+
+@media (max-width: 768px) {    
+    .description {
+        margin-bottom: 30px;
+    }
+}

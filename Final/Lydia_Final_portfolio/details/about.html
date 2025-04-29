@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <link rel="stylesheet" href="../styles/styles_about.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <a href="../index.html">Lydia's Portfolio</a>
+        </div>
+        <ul class="nav-menu">
+          <li class="dropdown">
+            <a href="../index.html#gallery">Work</a>
+            <ul class="dropdown-content">
+
+              <li class="sub-dropdown">
+                <div class="sub-header">
+                  <button class="sub-name">Oil Painting</button>
+                  <img class="decoration" src="../images/cursor/icon.png" alt="decor" />
+                </div>
+                <ul class="sub-artwork">
+                  <li><a href="details/art2.html">More than a Rose</a></li>
+                  <li><a href="details/art6.html">EYE</a></li>
+                  <li><a href="details/art13.html">Moon Jellyfish</a></li>
+                  <li><a href="details/art15.html">Waterlilies Reimagined</a></li>
+                </ul>
+              </li>
+
+              <li class="sub-dropdown">
+                <div class="sub-header">
+                  <button class="sub-name">Printmaking</button>
+                  <img class="decoration" src="../images/cursor/icon.png" alt="decor" />
+                </div>
+                <ul class="sub-artwork">
+                  <li><a href="details/art8.html">HBD</a></li>
+                  <li><a href="details/art10.html">Chinese New Year</a></li>
+                  <li><a href="details/art14.html">Rabbit</a></li>
+                </ul>
+              </li>
+
+              <li class="sub-dropdown">
+                <div class="sub-header">
+                  <button class="sub-name">Digital</button>
+                  <img class="decoration" src="../images/cursor/icon.png" alt="decor" />
+                </div>
+                <ul class="sub-artwork">
+                  <li><a href="details/art9.html">Candy Game</a></li>
+                  <li><a href="details/art16.html">Guess the Character</a></li>
+                  <li><a href="details/art7.html">Umami</a></li>
+                  <li><a href="details/art11.html">Digital Umami</a></li>
+                  <li><a href="details/art17.html">UPKP</a></li>
+                </ul>
+              </li>
+
+              <li class="sub-dropdown">
+                <div class="sub-header">
+                  <button class="sub-name">Other Media</button>
+                  <img class="decoration" src="../images/cursor/icon.png" alt="decor" />
+                </div>
+                <ul class="sub-artwork">
+                  <li><a href="details/art1.html">Broken Egg</a></li>
+                  <li><a href="details/art4.html">Reflections on Water</a></li>
+                  <li><a href="details/art5.html">Verdant & Vivid</a></li>
+                  <li><a href="details/art3.html">First Dress</a></li>
+                  <li><a href="details/art12.html">Gingerbread Men</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li><a href="../details/about.html">About</a></li>
+          <li><a href="../details/contact.html">Contact</a></li>
+      </ul>
+    </nav> 
+
+    <section class="intro-section">
+        <div class="about-container">
+            <div class="text-section">
+                <h1>About Me</h1>
+                <p>
+                    Hey there!  I'm Lydia, an artist and designer with a love for both traditional and digital media.
+                    I started out with classical fine arts, but over time, I found myself drawn to digital design,
+                    interactive media, and generative art.  Somewhere along the way, I realized I enjoy blending
+                    these worlds and seeing what happens when creativity meets technology.
+                </p>
+                <p>
+                    My work is all about experimenting, exploring, and occasionally making a glorious mess
+                    before finding something magical.  I believe art isn't just about what you see, it's about
+                    what you feel, experience, and sometimes accidentally spill coffee on.
+                </p>
+                <p>
+                    Feel free to check out my work, and if you ever want to chat, collaborate, or just share ideas,
+                    I'd love to hear from you!
+                </p>
+            </div>
+
+            <div class="polaroid" id="photo-trigger">
+                <img src="../images/About/about.jpg" alt="Lydia's Polaroid">
+                <p class="caption">Lydia</p>
+            </div>
+            <img class="click-icon" src="../images/About/click.png" alt="click icon">
+
+        </div>
+        <div class="white-cover" id="whiteCover"></div>
+    </section>
+
+
+    <!-- Transition -->
+
+    <div class="gradient-transition" id="gradientTransition"></div>
+
+    <!-- video background -->
+    <video id="timeline-video" autoplay muted loop playsinline>
+        <source src="../assets/bg.mp4" type="video/mp4" />
+    </video>
+
+    <!-- timeline -->
+    <section class="timeline-section" id="timelineSection">
+        <h2 class="timeline-title">Where it all began</h2>
+        
+        <div class="timeline-container">
+
+            <!-- yellow line -->
+            <div class="timeline-line">
+                <div class="timeline-line-fill"></div>
+            </div>
+
+
+            <div class="timeline-item left">
+                <div class="timeline-dot"></div>
+                <div class="timeline-image">
+                    <img src="../images/About/1.jpg" alt="art1">
+                </div>
+                <div class="timeline-content">
+                    <h3>May 2014</h3>
+                    <p>I officially started learning how to draw. 
+                        Charcoal, shading, proportions… everything felt new and a little intimidating, but exciting.
+                    </p>
+                </div>
+            </div>
+        
+            <div class="timeline-item right">
+                <div class="timeline-dot"></div>
+                <div class="timeline-image">
+                    <img src="../images/About/2.jpg" alt="art2">
+                </div>
+                <div class="timeline-content">
+                    <h3>Nov 2014</h3>
+                    <p> This year I met my Chinese painting teacher. 
+                        She introduced me to ink and brush, and its my first artwork at age 10.
+                    </p>
+                </div>
+            </div>
+
+            <div class="timeline-item left">
+                <div class="timeline-dot"></div>
+                <div class="timeline-image">
+                    <img src="../images/About/3.jpg" alt="art3">
+                </div>
+                <div class="timeline-content">
+                    <h3>Jul 2020</h3>
+                    <p>I started exploring oil painting with a new teacher who really inspired me. 
+                        It was my first time copying a full oil painting, it felt completely different from pencil and ink.
+                    </p>
+                </div>
+            </div>
+       
+            <div class="timeline-item right">
+                <div class="timeline-dot"></div>
+                <div class="timeline-image">
+                    <video src="../images/About/4.mov" autoplay muted loop playsinline></video>
+                </div>
+                <div class="timeline-content">
+                    <h3>Jan 2023</h3>
+                    <p> Cause of a TV series I accidentally fell in love with coding.
+                        Actually didn't really understand the logic back then, just thought it looked kind of magical.
+                    </p>
+                </div>
+            </div>
+
+            <div class="timeline-item left">
+                <div class="timeline-dot"></div>
+                <div class="timeline-image">
+                    <img src="../images/About/5.jpg" alt="art5">
+                </div>
+                <div class="timeline-content">
+                    <h3>Feb 2025</h3>
+                    <p>My first attempt at printmaking! 
+                        I took an elective course at university out of curiosity, 
+                        and ended up fascinated by how traditional techniques like etching could feel so physical and raw. 
+                    </p>
+                </div>
+            </div>
+       
+            <div class="timeline-item right">
+                <div class="timeline-dot"></div>
+                <div class="timeline-image">
+                    <img src="../images/About/6.jpg" alt="art6">
+                </div>
+                <div class="timeline-content">
+                    <h3>Now</h3>
+                    <p> In between classes and projects, you'll usually find me at a gallery or museum. 
+                        It's where I reset, reflect, and rediscover why I love art in the first place.
+                    </p>
+                </div>
+            </div>
+
+            <div class="timeline-ending">
+                <p class="quote-left">✨The story continue…</p>
+                <p class="quote-right">and I'm still drawing the lines.</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const trigger = document.getElementById("photo-trigger");
+        const whiteCover = document.getElementById("whiteCover");
+        const gradient = document.getElementById("gradientTransition");
+        const video = document.getElementById("timeline-video");
+        const timeline = document.getElementById("timelineSection");
+
+        trigger.addEventListener("click", () => {
+        if (window.innerWidth > 768) {
+            whiteCover.style.display = "block";
+            gradient.style.display = "block";
+            video.style.display = "block";
+            timeline.style.display = "block";
+            document.body.style.overflow = "auto";
+
+            setTimeout(() => {
+                gradient.scrollIntoView({ behavior: "smooth" });
+            }, 300);
+        } else {
+            return;
+        }
+    });
+
+
+        let lineStarted = false;
+        let nowCelebrated = false;
+
+        function startLineAnimation() {
+            if (lineStarted) return;
+            lineStarted = true;
+
+            gsap.to(".timeline-line-fill", {
+            height: () => {
+                const timeline = document.querySelector(".timeline-container");
+                return timeline.scrollHeight + "px";
+            },
+            ease: "none",
+            scrollTrigger: {
+                trigger: ".timeline-container",
+                start: "top center",      // yellow line start
+                end: "bottom bottom",     // end
+                scrub: true,
+                onUpdate: () => {
+                const line = document.querySelector(".timeline-line-fill");
+                const lineRect = line.getBoundingClientRect();
+                const lineBottom = lineRect.top + lineRect.height;
+
+                document.querySelectorAll(".timeline-dot").forEach(dot => {
+                const dotRect = dot.getBoundingClientRect();
+                const dotY = dotRect.top + dotRect.height / 2;
+
+                if (lineBottom >= dotY) {
+                    dot.classList.add("active");
+
+                    const parentItem = dot.closest('.timeline-item');
+                    const content = parentItem?.querySelector('.timeline-content');
+                    const heading = content?.querySelector("h3")?.textContent.trim();
+
+                    if (heading === "Now" && !nowCelebrated) {
+                    nowCelebrated = true;
+
+                    // get dot position
+                    const centerX = dotRect.left + dotRect.width / 2;
+                    const centerY = dotRect.top + dotRect.height / 2;
+                    const xRatio = centerX / window.innerWidth;
+                    const yRatio = centerY / window.innerHeight;
+
+                    confetti({
+                        particleCount: 80,
+                        spread: 360,
+                        startVelocity: 30,
+                        origin: { x: xRatio, y: yRatio },
+                        ticks: 60,
+                        scalar: 0.9,
+                        colors: ['#FFD700', '#FF69B4', '#87CEFA', '#ffffff']
+                    });
+
+                    setTimeout(() => {
+                        confetti({
+                        particleCount: 40,
+                        spread: 360,
+                        startVelocity: 20,
+                        origin: { x: xRatio, y: yRatio },
+                        ticks: 50,
+                        scalar: 1
+                        });
+                    }, 300);
+                    }
+                } else {
+                    dot.classList.remove("active");
+                }
+                });
+            }
+            }
+        });
+        }
+
+        function updateDotsOnScroll() {
+            const line = document.querySelector(".timeline-line-fill");
+            const lineRect = line.getBoundingClientRect();
+            const lineBottom = lineRect.top + lineRect.height;
+
+            document.querySelectorAll(".timeline-dot").forEach(dot => {
+                const dotRect = dot.getBoundingClientRect();
+                const dotY = dotRect.top + dotRect.height / 2;
+
+                if (lineBottom >= dotY + 30) {
+                dot.classList.add("active");
+                } else {
+                dot.classList.remove("active");
+                }
+            });
+        }
+
+        // scroll trigger the yellow line
+        window.addEventListener("scroll", () => {
+            if (!lineStarted && window.scrollY > 10) {
+            startLineAnimation();
+            }
+            updateDotsOnScroll();
+        });
+
+        // dropdown menu（nav）
+        document.addEventListener("DOMContentLoaded", () => {
+            const nav = document.querySelector("nav");
+            const toggles = nav.querySelectorAll(".sub-name");
+
+            toggles.forEach((toggle) => {
+            toggle.addEventListener("click", (e) => {
+                e.preventDefault();
+                const parent = toggle.closest(".sub-dropdown");
+                parent.classList.toggle("open");
+            });
+            });
+        });
+        window.addEventListener("load", updateDotsOnScroll);
+
+
+        const nav = document.querySelector("nav");
+        const timelineObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+            nav.classList.add("nav-light"); // nav text turns white
+            } else {
+            nav.classList.remove("nav-light"); // Restore the black text
+            }
+        });
+        }, {
+        threshold: 0.2
+        });
+
+        timelineObserver.observe(document.getElementById("timelineSection"));
+            
+    
+
+        const polaroid = document.getElementById('photo-trigger');
+        const clickIcon = document.querySelector('.click-icon');
+
+        // Locate the icon image to the Polaroid
+        function positionClickIcon() {
+        const rect = polaroid.getBoundingClientRect();
+
+        const iconX = rect.right - 30; 
+        const iconY = rect.bottom - 35;
+
+        clickIcon.style.left = `${iconX}px`;
+        clickIcon.style.top = `${iconY}px`;
+        }
+
+        // update pages
+        window.addEventListener('resize', positionClickIcon);
+        window.addEventListener('load', positionClickIcon);
+
+        // hover 
+        polaroid.addEventListener('mouseenter', () => {
+        positionClickIcon(); 
+        clickIcon.style.opacity = '1';
+        });
+
+        polaroid.addEventListener('mouseleave', () => {
+        clickIcon.style.opacity = '0';
+        });
+
+
+        const ending = document.querySelector('.timeline-ending');
+
+        const endingObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+            ending.classList.add('visible');
+            }
+        });
+        }, { threshold: 0.6 });
+
+        endingObserver.observe(ending);
+
+
+    </script>
+
+</body>
+</html>
+

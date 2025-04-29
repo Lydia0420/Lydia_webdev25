@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Middle School Artwork</title>
+    <link rel="stylesheet" href="../styles/styles_middle.css"> 
+</head>
+
+<body>
+   <nav>
+        <div class="logo">
+            <a href="../index.html">Lydia's Portfolio</a>
+        </div>
+        <ul>
+            <li><a href="../index.html#gallery">Work</a></li>
+            <li><a href="../details/about.html">About</a></li>
+            <li><a href="../details/contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <h1>Middle School Artwork</h1>
+     <p class="description">
+            During middle school, I focused on fundamental skills, transitioning from geometric forms to still life and portraits. 
+            I also experimented with various artistic media such as watercolor, colored pencils, and oil pastels, 
+            exploring different textures and expressions.
+    </p>
+
+    <div class="gallery">
+        <div class="row">
+            <div class="artwork left"><img src="../images/middle/middle_01.jpg" alt="Middle Artwork 1"></div>
+            <div class="artwork right"><img src="../images/middle/middle_02.JPG" alt="Middle Artwork 2"></div>
+        </div>
+        <div class="row">
+            <div class="artwork left"><img src="../images/middle/middle_03.jpg" alt="Middle Artwork 3"></div>
+            <div class="artwork right"><img src="../images/middle/middle_04.jpg" alt="Middle Artwork 4"></div>
+        </div>
+        <div class="row">
+            <div class="artwork left"><img src="../images/middle/middle_05.jpg" alt="Middle Artwork 5"></div>
+            <div class="artwork right"><img src="../images/middle/middle_06.jpg" alt="Middle Artwork 6"></div>
+        </div>
+        <div class="row">
+            <div class="artwork left"><img src="../images/middle/middle_07.JPG" alt="Middle Artwork 7"></div>
+            <div class="artwork right"><img src="../images/middle/middle_08.jpg" alt="Middle Artwork 8"></div>
+        </div>
+    </div>
+
+
+  <!-- carousel -->
+  <div id="lightbox" class="lightbox hidden">
+    <div class="lightbox-carousel"></div>
+    <button class="lightbox-close">✕</button>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script>
+    const galleryImages = document.querySelectorAll(".gallery img");
+    const lightbox = document.getElementById("lightbox");
+    const carousel = document.querySelector(".lightbox-carousel");
+    const closeBtn = document.querySelector(".lightbox-close");
+  
+    let currentIndex = 0;
+    let lightboxImgs = [];
+    let lightboxWrappers = [];
+  
+    galleryImages.forEach((img, index) => {
+      img.addEventListener("click", () => {
+        currentIndex = index;
+        openLightbox();
+      });
+    });
+  
+    function openLightbox() {
+      carousel.innerHTML = "";
+      lightboxImgs = [];
+      lightboxWrappers = [];
+  
+      const customOrder = [0, 1, 3, 2, 4, 5, 7, 6];
+
+      customOrder.forEach(i => {
+        const img = galleryImages[i];
+        const newImg = document.createElement("img");
+
+        if (i === 1) {
+            newImg.src = "../images/middle/middle_02_2.jpg"; 
+        } else {
+            newImg.src = img.src;
+        }
+
+        const wrapper = document.createElement("div");
+        wrapper.classList.add("carousel-wrapper");
+        wrapper.appendChild(newImg);
+
+        carousel.appendChild(wrapper);
+
+        lightboxImgs.push(newImg);
+        lightboxWrappers.push(wrapper);
+      });
+  
+      updateCarousel();
+      lightbox.classList.remove("hidden");
+    }
+  
+    function updateCarousel() {
+      const spacing = 350;
+      const maxVisible = 1;
+  
+      lightboxWrappers.forEach((wrapper, i) => {
+        const offset = i - currentIndex;
+        const img = lightboxImgs[i];
+        img.classList.remove("active");
+  
+        if (Math.abs(offset) > maxVisible) {
+          gsap.to(wrapper, {
+            opacity: 0,
+            duration: 0.4,
+            pointerEvents: "none"
+          });
+        } else {
+          const scale = offset === 0 ? 1.2 : 0.9;
+          const x = offset * spacing;
+          const y = Math.abs(offset) * 70; 
+          const rotateZ = offset * 17;
+          const opacity = offset === 0 ? 1 : 0.4;
+  
+          gsap.to(wrapper, {
+            x: x,
+            y: y,
+            scale: scale,
+            rotateZ: rotateZ,
+            opacity: opacity,
+            zIndex: offset === 0 ? 100 : 10 - Math.abs(offset),
+            duration: 0.6,
+            ease: "power3.out"
+          });
+  
+          if (offset === 0) {
+            img.classList.add("active");
+          }
+        }
+      });
+    }
+  
+    lightbox.addEventListener("click", (e) => {
+      if (e.target.classList.contains("lightbox-close")) return;
+  
+      const mid = window.innerWidth / 2;
+      if (e.clientX < mid && currentIndex > 0) {
+        currentIndex--;
+        updateCarousel();
+      } else if (e.clientX >= mid && currentIndex < lightboxImgs.length - 1) {
+        currentIndex++;
+        updateCarousel();
+      }
+    });
+  
+    closeBtn.addEventListener("click", () => {
+      lightbox.classList.add("hidden");
+    });
+
+    document.querySelector(".logo a").addEventListener("click", (e) => {
+    e.preventDefault(); 
+    window.location.href = "../index.html#return"; 
+    });
+  </script>
+</body>
+</html>

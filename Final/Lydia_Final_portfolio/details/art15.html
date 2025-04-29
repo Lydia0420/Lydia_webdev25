@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artwork 15 - Green</title>
+    <link rel="stylesheet" href="../styles/styles_art15.css">
+</head>
+<body>
+    <nav>
+        <a href="../index.html#gallery" class="back-btn">← Back </a>
+    </nav>
+
+    <!-- work -->
+    <div class="container">
+        <div class="main-artwork">
+            <img src="../images/green/art15.jpg" alt="Final Artwork">
+        </div>
+
+        <div class="text-content">
+            <h1 class="title">Waterlilies Reimagined</h1>
+            <p class="description">
+                A tribute to my artistic roots. Inspired by Monet, this 1m × 1m painting took nearly a year to complete, 
+                I felt as stepped into his garden, experiencing the shifting hues of water.
+            </p>
+
+            <div class="process-gallery">
+                <div class="process-item">
+                    <img src="../images/green/process1.JPG" alt="Process Image 1">
+                </div>
+                <div class="process-item">
+                    <img src="../images/green/process2.JPG" alt="Process Image 2">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelector(".back-btn").addEventListener("click", (e) => {
+          e.preventDefault();
+          window.location.href = "../index.html#return-from-gallery";
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me</title>
+    <link rel="stylesheet" href="../styles/styles_contact.css"> 
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <a href="../index.html">Lydia's Portfolio</a>
+        </div>
+        <ul class="nav-menu">
+          <li class="dropdown">
+            <a href="../index.html#gallery">Work</a>
+            <ul class="dropdown-content">
+
+              <li class="sub-dropdown">
+                <div class="sub-header">
+                  <button class="sub-name">Oil Painting</button>
+                  <img class="decoration" src="../images/cursor/icon.png" alt="decor" />
+                </div>
+                <ul class="sub-artwork">
+                  <li><a href="details/art2.html">More than a Rose</a></li>
+                  <li><a href="details/art6.html">EYE</a></li>
+                  <li><a href="details/art13.html">Moon Jellyfish</a></li>
+                  <li><a href="details/art15.html">Waterlilies Reimagined</a></li>
+                </ul>
+              </li>
+
+              <li class="sub-dropdown">
+                <div class="sub-header">
+                  <button class="sub-name">Printmaking</button>
+                  <img class="decoration" src="../images/cursor/icon.png" alt="decor" />
+                </div>
+                <ul class="sub-artwork">
+                  <li><a href="details/art8.html">HBD</a></li>
+                  <li><a href="details/art10.html">Chinese New Year</a></li>
+                  <li><a href="details/art14.html">Rabbit</a></li>
+                </ul>
+              </li>
+
+              <li class="sub-dropdown">
+                <div class="sub-header">
+                  <button class="sub-name">Digital</button>
+                  <img class="decoration" src="../images/cursor/icon.png" alt="decor" />
+                </div>
+                <ul class="sub-artwork">
+                  <li><a href="details/art9.html">Candy Game</a></li>
+                  <li><a href="details/art16.html">Guess the Character</a></li>
+                  <li><a href="details/art7.html">Umami</a></li>
+                  <li><a href="details/art11.html">Digital Umami</a></li>
+                  <li><a href="details/art17.html">UPKP</a></li>
+                </ul>
+              </li>
+
+              <li class="sub-dropdown">
+                <div class="sub-header">
+                  <button class="sub-name">Other Media</button>
+                  <img class="decoration" src="../images/cursor/icon.png" alt="decor" />
+                </div>
+                <ul class="sub-artwork">
+                  <li><a href="details/art1.html">Broken Egg</a></li>
+                  <li><a href="details/art4.html">Reflections on Water</a></li>
+                  <li><a href="details/art5.html">Verdant & Vivid</a></li>
+                  <li><a href="details/art3.html">First Dress</a></li>
+                  <li><a href="details/art12.html">Gingerbread Men</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li><a href="../details/about.html">About</a></li>
+          <li><a href="../details/contact.html">Contact</a></li>
+      </ul>
+    </nav> 
+
+    <section class="contact-container">
+        <h1>Contact Me</h1>
+        <p>Feel free to reach out to me via email or follow me on social media!</p>
+
+        <div class="contact-info">
+            <p><strong>Email:</strong> <a href="mailto:nh2530@nyu.edu">nh2530@nyu.com</a></p>
+            <p><strong>Instagram:</strong> <a href="https://instagram.com/unnioo_h20" target="_blank">@unnioo_h20</a></p>
+            <p><strong>GitHub:</strong> <a href="https://github.com/Lydia0420" target="_blank">github.com/Lydiagithub</a></p>
+        </div>
+
+        <!-- form -->
+        <form action="https://formspree.io/f/xpwpzypq" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <script>
+        // dropdown menu
+        document.addEventListener("DOMContentLoaded", () => {
+            const nav = document.querySelector("nav");
+            const toggles = nav.querySelectorAll(".sub-name");
+
+            toggles.forEach((toggle) => {
+            toggle.addEventListener("click", (e) => {
+                e.preventDefault();
+                const parent = toggle.closest(".sub-dropdown");
+                parent.classList.toggle("open");
+            });
+            });
+        });
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,369 @@
+body {
+    background-color: white;
+    color: black;
+    text-align: center;
+    font-family: "Cormorant Garamond", serif;
+    padding-top: 80px; 
+    cursor: url('../images/cursor/100.png') 16 16, auto;
+}
+
+a:hover,
+button:hover,
+.artwork:hover {
+  cursor: url('../images/cursor/hover.png'), auto;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    width: 100vw;
+    max-width: none;
+    box-sizing: border-box;
+    background: linear-gradient(to bottom, white, rgba(255, 255, 255, 0)); 
+}
+
+.logo {
+    font-size: 18px;
+    font-weight: bold;
+    white-space: nowrap; 
+    margin-left: 0px; 
+}
+
+.logo a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 0px; 
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline-block;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    display: block;
+    padding: 5px 0px 5px 20px;
+    transition: opacity 0.3s ease-in-out;
+}
+
+nav ul li a:hover {
+    opacity: 0.6;
+}
+
+/* work */
+h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+    margin: 50px auto 20px;
+    text-align: center;
+    font-family: "Cormorant Garamond", serif;
+}
+
+.description {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto 30px;
+    line-height: 1.5;
+    color: #555;
+    margin-top: 20px;
+    font-family: "Cormorant Garamond", serif;
+}
+
+.gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    max-width: 64vw; 
+    margin: 50px auto;
+    justify-content: center;
+}
+
+.row {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+/* 2 row */
+.row.two-items {
+    display: flex;
+    justify-content: space-between;
+    gap: 1.5%;
+}
+
+.row.two-items .artwork:first-child {
+    justify-content: flex-start;
+}
+
+.row.two-items .artwork:last-child {
+    justify-content: flex-end;
+}
+
+/* 3 row */
+.row.three-items {
+    display: flex;
+    justify-content: space-between; 
+    gap: 1.5%;
+}
+
+.row.three-items .artwork:first-child {
+    justify-content: flex-start;
+}
+
+.row.three-items .artwork:nth-child(2) {
+    flex-grow: 1; 
+    text-align: center; 
+    display: flex;
+    justify-content: center;
+}
+
+.row.three-items .artwork:last-child {
+    justify-content: flex-end;
+}
+
+
+
+.artwork {
+    display: flex;
+    justify-content: center;
+    flex: 1; 
+}
+
+.artwork img {
+    height: 380px; 
+    width: auto; 
+    border-radius: 10px; 
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Add a shadow to the element */
+    transition: transform 0.3s ease-in-out;
+}
+
+.artwork img:hover {
+    transform: scale(1.05);
+}
+
+
+@media (max-width: 1200px) {
+    .gallery {
+        max-width: 80vw;
+        justify-content: center;  
+        align-items: center;
+        gap: 25px; 
+    }
+    .row {
+        max-width: 90%; 
+        align-items: center;
+        justify-content: center;  
+    }
+
+    .row.two-items {
+        justify-content: center;  
+    }
+
+    .row.three-items {
+        justify-content: center;  
+    }
+
+    .artwork {
+        max-width: 47%; 
+    }
+    .artwork img {
+        height: auto; 
+        width: 100%; 
+    }
+
+    .description {
+        max-width: 600px; 
+        
+    }
+}
+
+@media (max-width: 900px) {
+    .row {
+        max-width: 85%;
+    }
+    .artwork {
+        max-width: 46%;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .gallery {
+        max-width: 90vw;
+        gap: 25px;
+    }
+    .row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .row.two-items {
+        gap: 25px;
+    }
+
+    .row.three-items {
+        gap: 25px;
+    }
+
+    .artwork {
+        width: 90%;
+        max-width: 90%;
+    }
+    .artwork img {
+        width: 100%;
+        height: auto;
+    }
+
+    .description {
+        max-width: 380px;
+       
+    }
+
+    h1 {
+        font-size: 2.2rem; 
+        max-width: 60%;
+        justify-content: center; 
+    }
+}
+
+
+.carousel-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+  
+.hidden {
+    display: none;
+}
+
+.carousel-container {
+    padding-top: 280px;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 2000px;
+}
+  
+.carousel-card {
+    width: 90%;
+    height: 90%;
+    object-fit: contain;
+    border-radius: 8px;
+    transition: transform 0.4s ease, filter 0.3s;
+    filter: brightness(1);
+    z-index: 1;
+    position: relative;
+}
+  
+
+#close-carousel {
+    position: absolute;
+    top: 30px;
+    right: 50px;
+    font-size: 32px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+    z-index: 10000;
+}
+
+#close-carousel:hover {
+    opacity: 0.6;
+}
+  
+.card-frame {
+    width: 240px;
+    height: 360px;
+    background: rgba(140, 134, 134, 0.994);
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    transition: transform 0.4s ease, filter 0.3s ease;
+    transform-origin: bottom center;
+    z-index: 1;
+}
+
+.card-frame.active {
+    transform: translateY(-40px) scale(1.4) !important;
+    z-index: 10;
+    filter: none;
+}
+  
+.card-frame.dimmed {
+    filter: grayscale(100%) brightness(0.4);
+    z-index: 0;
+}
+  
+.card-frame:hover:not(.active) {
+    filter: brightness(0.7);
+}
+  
+.card-frame img.carousel-card {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: 8px;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+
+@media (max-width: 768px) {
+    .lightbox-carousel {
+        width: 80vw;
+        height: 60vh;
+    }
+
+    .carousel-wrapper {
+        width: 400px;       
+        height: 560px;
+    }
+
+    .lightbox-carousel img {
+        max-height: 60vh;
+    }
+  }
+  
+  @media (max-width: 500px) {
+    .carousel-wrapper {
+        width: 300px;       
+        height: 460px;
+    }
+  }

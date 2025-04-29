@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artwork 12 - Gingerbread</title>
+    <link rel="stylesheet" href="../styles/styles_art12.css">
+</head>
+<body>
+    <nav>
+        <a href="../index.html#gallery" class="back-btn">← Back </a>
+    </nav>
+    
+    <!-- work -->
+    <section class="container">
+        <div class="text-content">
+            <h1 class="title">Stop-Motion</h1>
+            <p class="description">
+                A creative project illustrating the whimsical process of baking gingerbread cookies. 
+                Every element is handdrawn, cut out, and animated frame by frame.
+            </p>
+        </div>
+
+        <div class="process-gallery">
+            <img src="../images/gingerbread/process1.png" alt="Process 1" class="process-image">
+            <img src="../images/gingerbread/process2.png" alt="Process 2" class="process-image">
+        </div>
+    </section>
+
+    <div class="video-container">
+        <iframe src="https://drive.google.com/file/d/1Xmj0u-YSR98wDIRHjq9PGz3YN_slI6O6/preview" width="900px" height="506.25px" allow="autoplay" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+
+    <script>
+        document.querySelector(".back-btn").addEventListener("click", (e) => {
+          e.preventDefault();
+          window.location.href = "../index.html#return-from-gallery";
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,264 @@
+body {
+    background-color: white;
+    color: black;
+    text-align: center;
+    font-family: "Cormorant Garamond", serif;
+    padding-top: 80px; 
+}
+
+nav {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    width: 100vw;
+    max-width: none;
+    box-sizing: border-box;
+    background: linear-gradient(to bottom, white, rgba(255, 255, 255, 0)); 
+}
+
+.logo {
+    font-size: 18px;
+    font-weight: bold;
+    white-space: nowrap; 
+    margin-left: 0px; 
+}
+
+.logo a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 0px; 
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline-block;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    display: block;
+    padding: 5px 0px 5px 20px;
+    transition: opacity 0.3s ease-in-out;
+}
+
+nav ul li a:hover {
+    opacity: 0.6;
+}
+
+/* work */
+h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+    margin: 50px auto 20px;
+    text-align: center;
+    font-family: "Cormorant Garamond", serif;
+}
+
+.description {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto 30px;
+    line-height: 1.5;
+    color: #555;
+    margin-top: 20px;
+    font-family: "Cormorant Garamond", serif;
+}
+
+.elementary-container {
+    display: flex;
+    justify-content: center; 
+}
+
+.elementary-images {
+    column-count: 3; 
+    column-gap: 20px; 
+    padding: 50px;
+    max-width: 65vw;
+}
+
+.elementary-images img {
+    width: 100%;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.elementary-images img:hover {
+    transform: scale(1.05);
+}
+
+
+@media (max-width: 1024px) {
+    .elementary-images {
+        column-count: 2; 
+        max-width: 75vw;
+    }
+
+    .description {
+        max-width: 600px; 
+        
+    }
+}
+
+@media (max-width: 768px) {
+    .elementary-images {
+        column-count: 1; 
+        max-width: 70vw;
+    }
+
+    .description {
+        max-width: 400px;
+       
+    }
+
+    h1 {
+        font-size: 2.2rem; 
+        max-width: 70%;
+        justify-content: center; 
+    }
+}
+
+@media (max-width: 450px) {
+  .description {
+      max-width: 360px;
+     
+  }
+}
+
+
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  z-index: 9999;
+  flex-direction: column;
+  perspective: 1200px;
+}
+
+.lightbox-carousel {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100vw;
+  height: 80vh;
+  transform-style: preserve-3d;
+}
+
+.lightbox-carousel img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transform-style: preserve-3d;
+  border-radius: 12px;
+  max-height: 70vh;
+  transition: all 0.3s ease;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+  filter: grayscale(100%);
+}
+
+.lightbox-carousel img.active {
+  filter: grayscale(0%);
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 30px;
+  right: 50px;
+  font-size: 32px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.lightbox-close:hover {
+  opacity: 0.6;
+}
+
+.hidden {
+  display: none;
+}
+
+.carousel-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 500px;       
+  height: 650px;
+  background-color: rgba(0, 0, 0, 0.0);
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform-style: preserve-3d;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+.carousel-wrapper img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  filter: grayscale(100%);
+  transition: all 0.3s ease;
+}
+
+.carousel-wrapper img.active {
+  filter: grayscale(0%);
+}
+
+.lightbox,
+.lightbox * {
+  user-select: none;
+  -webkit-user-select: none; 
+}
+
+
+
+@media (max-width: 768px) {
+  .carousel-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300px;       
+    height: 450px;
+  }
+}
+
+@media (max-width: 500px) {
+  .carousel-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;       
+    height: 450px;
+  }
+}

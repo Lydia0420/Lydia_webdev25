@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lydia's Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+
+
+
+<body>
+    <!-- Top navigation bar -->
+    <nav>
+        <div class="logo">
+            <a href="index.html">Lydia's Portfolio</a>
+        </div>
+
+        <div class="nav-right">
+        <ul class="nav-menu">
+          <li class="dropdown">
+            <a href="#gallery">Work</a>
+            <ul class="dropdown-content">
+
+              <li class="sub-dropdown">
+                <div class="sub-header">
+                  <button class="sub-name">Oil Painting</button>
+                  <img class="decoration" src="images/cursor/icon.png" alt="decor" />
+                </div>
+                <ul class="sub-artwork">
+                  <li><a href="details/art2.html">More than a Rose</a></li>
+                  <li><a href="details/art6.html">EYE</a></li>
+                  <li><a href="details/art13.html">Moon Jellyfish</a></li>
+                  <li><a href="details/art15.html">Waterlilies Reimagined</a></li>
+                </ul>
+              </li>
+
+              <li class="sub-dropdown">
+                <div class="sub-header">
+                  <button class="sub-name">Printmaking</button>
+                  <img class="decoration" src="images/cursor/icon.png" alt="decor" />
+                </div>
+                <ul class="sub-artwork">
+                  <li><a href="details/art8.html">HBD</a></li>
+                  <li><a href="details/art10.html">Chinese New Year</a></li>
+                  <li><a href="details/art14.html">Rabbit</a></li>
+                </ul>
+              </li>
+
+              <li class="sub-dropdown">
+                <div class="sub-header">
+                  <button class="sub-name">Digital</button>
+                  <img class="decoration" src="images/cursor/icon.png" alt="decor" />
+                </div>
+                <ul class="sub-artwork">
+                  <li><a href="details/art9.html">Candy Game</a></li>
+                  <li><a href="details/art16.html">Guess the Character</a></li>
+                  <li><a href="details/art7.html">Umami</a></li>
+                  <li><a href="details/art11.html">Digital Umami</a></li>
+                  <li><a href="details/art17.html">UPKP</a></li>
+                </ul>
+              </li>
+
+              <li class="sub-dropdown">
+                <div class="sub-header">
+                  <button class="sub-name">Other Media</button>
+                  <img class="decoration" src="images/cursor/icon.png" alt="decor" />
+                </div>
+                <ul class="sub-artwork">
+                  <li><a href="details/art1.html">Broken Egg</a></li>
+                  <li><a href="details/art4.html">Reflections on Water</a></li>
+                  <li><a href="details/art5.html">Verdant & Vivid</a></li>
+                  <li><a href="details/art3.html">First Dress</a></li>
+                  <li><a href="details/art12.html">Gingerbread Men</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li><a href="details/about.html">About</a></li>
+          <li><a href="details/contact.html">Contact</a></li>
+      </ul>
+
+      <div class="hamburger" id="hamburger">
+        ☰
+      </div>
+    </div>
+
+
+      <!-- Phone screen nav -->
+      <div class="overlay-menu" id="overlayMenu">
+            <div class="close-btn" id="closeOverlay">✕</div>
+            <div class="overlay-content">
+                <a href="index.html" id="nav-home">Home</a>
+                <a href="#gallery" id="nav-work">Work</a>
+                <a href="details/about.html" id="nav-about">About</a>
+                <a href="details/contact.html" id="nav-contact">Contact</a>
+                <p class="footer">Made by Lydia</p>
+            </div>
+      </div>
+    </nav> 
+
+    <!-- Frame animation area -->
+    <section id="frame-section">
+      <div id="frame-sticky">
+        <!-- vedio -->
+        <div id="frame-container"></div>
+
+        <!-- text -->
+        <div class="text-container">
+            <section class="text-section" id="section1">
+                <h1>Step into a world of transformation.</h1>
+                <p>Every shape tells a story.<br>Between reality and imagination.<br>Sketching, layering, experimenting.</p>
+            </section>
+            <section class="text-section" id="section2">
+                <h1>Where do ideas come from?</h1>
+                <p>Observing the world, capturing fragments.<br>From scattered lines to a complete vision.<br>Growth is a process of transformation.</p>
+            </section>
+            <section class="text-section" id="section3">
+                <h1>Lines become forms, ideas take flight.</h1>
+                <p>Art is never static, nor am I.<br>This is just the beginning.<br>Welcome to my creative journey...</p>
+            </section>
+        </div>
+      </div>
+    </section>
+
+    <!-- timeline -->
+    <section id="timeline-section">
+        <div id="bg-container">
+            <div id="bg-inner"></div>
+        </div>
+
+        <div class="icon-layer">
+            <img src="images/timeline/fg01.png" class="icon left-icon" alt="icon1">
+            <img src="images/timeline/fg02.png" class="icon right-icon" alt="icon2">
+            <img src="images/timeline/fg03.png" class="icon left-icon" alt="icon3">
+            <img src="images/timeline/fg04.png" class="icon right-icon" alt="icon4">
+        </div>
+
+        <div class="work-list">
+          <div class="work-item" data-bg="images/timeline/bg01.jpg">
+            <div class="main-image-wrapper">
+              <img src="images/timeline/01.jpg" class="main-image to-elementary" alt="art1">
+            </div>
+          </div>
+        
+          <div class="work-item" data-bg="images/timeline/bg02.jpg">
+            <div class="main-image-wrapper">
+              <img src="images/timeline/02.jpg" class="main-image to-middle" alt="art2">
+            </div>
+          </div>
+        
+          <div class="work-item" data-bg="images/timeline/bg03.jpg">
+            <div class="main-image-wrapper">
+              <img src="images/timeline/03.jpg" class="main-image to-high" alt="art3">
+            </div>
+          </div>
+        
+          <div class="work-item" data-bg="images/timeline/bg04.jpg">
+            <div class="main-image-wrapper">
+              <img src="images/timeline/04.jpg" class="main-image to-university" alt="art4">
+            </div>
+          </div>
+        </div>
+    </section>
+
+
+    <!-- QUOTE -->
+    <section id="quote-section" class="icon-section">
+        <div class="scroll-rotate-icon-container">
+            <div class="icon-3d-wrapper">
+                <img src="images/timeline/icon2.png" class="icon-front" />
+                <img src="images/timeline/icon.png" class="icon-back" />
+            </div>
+            <div class="icon-description">
+                <p class="line">Illustrations are the mirrors</p>
+                <p class="line">Emotions are the reflection</p>
+                <p class="line">The purpose of art is to make the invisible visible.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- artwork image -->
+    <section id="gallery" class="art-gallery">
+      <div class="artwork img1">
+          <a href="details/art1.html">
+              <img src="images/gallery/art1.png" alt="Broken Egg">
+              <div class="overlay">
+                  <h3 class="title">Broken Egg</h3>
+                  <p class="description">Pencil and white chalk on paper</p>
+                  <p class="size">37 cm x 26.5 cm | 2022</p>
+              </div>
+          </a>
+      </div>
+
+      <div class="artwork img2">
+          <a href="details/art2.html">
+              <img src="images/gallery/art2.png" alt="More than a Rose">
+              <div class="overlay">
+                  <h3 class="title">More than <br> a Rose</h3>
+                  <p class="description">Oil Painting</p>
+                  <p class="size">Hexagonal, 50 cm | 2022</p>
+              </div>
+          </a>
+      </div>
+  
+      <div class="artwork img3">
+          <a href="details/art3.html">
+              <img src="images/gallery/art3.jpg" alt="First Dress">
+              <div class="overlay">
+                  <h3 class="title">First Dress</h3>
+                  <p class="description"> Digital sketch & Fabric design</p>
+                  <p class="size">Custom Tailored | 2022</p>
+              </div>
+          </a>
+      </div>
+
+      <div class="artwork img4">
+          <a href="details/art4.html">
+              <img src="images/gallery/art4.JPG" alt="Reflections on Water">
+              <div class="overlay">
+                  <h3 class="title">Reflections on Water</h3>
+                  <p class="description">Oil Pastel on textured paper </p>
+                  <p class="size">15 cm x 15 cm | 2020</p>
+              </div>
+          </a>
+      </div>
+
+      <div class="artwork img5">
+          <a href="details/art5.html">
+              <img src="images/gallery/art5.jpg" alt="Verdant & Vivid">
+              <div class="overlay">
+                  <h3 class="title">Verdant & Vivid</h3>
+                  <p class="description">Watercolor </p>
+                  <p class="size">25 cm x 25 cm | 2019</p>
+              </div>
+          </a>
+      </div>
+
+      <div class="artwork img6">
+          <a href="details/art6.html">
+              <img src="images/gallery/art6.jpg" alt="EYE.">
+              <div class="overlay">
+                  <h3 class="title">EYE</h3>
+                  <p class="description">Oil Painting </p>
+                  <p class="size">25 cm x 25 cm | 2021</p>
+              </div>
+          </a>
+      </div>
+
+      <div class="artwork img7">
+          <a href="details/art7.html">
+              <img src="images/gallery/art7.png" alt="Umami">
+              <div class="overlay">
+                  <h3 class="title">Umami</h3>
+                  <p class="description">Menu Design (Adobe InDesign) </p>
+                  <p class="size">A3 | 2024</p>
+              </div>
+          </a>
+      </div>
+
+      <div class="artwork img8">
+          <a href="details/art8.html">
+              <img src="images/gallery/art8.jpg" alt="HBD.">
+              <div class="overlay">
+                  <h3 class="title">HBD</h3>
+                  <p class="description">Etching </p>
+                  <p class="size">6 in x 6 in | 2025</p>
+              </div>
+          </a>
+      </div>
+
+      <div class="artwork img9">
+          <a href="details/art9.html">
+              <img src="images/gallery/art9.jpg" alt="Candy Game">
+              <div class="overlay">
+                  <h3 class="title">Candy Game</h3>
+                  <p class="description">Interactive game (p5.js)   </p>
+                  <p class="size">2024</p>
+              </div>
+          </a>
+      </div>
+
+      <div class="artwork img10">
+          <a href="details/art10.html">
+              <img src="images/gallery/art10.jpg" alt="Chinese New Year">
+              <div class="overlay">
+                  <h3 class="title">Chinese New Year</h3>
+                  <p class="description">Etching </p>
+                  <p class="size">6 in x 6 in | 2025</p>
+              </div>
+          </a>
+      </div>
+
+      <div class="artwork img11">
+          <a href="details/art11.html">
+              <img src="images/gallery/art11.png" alt="Umami">
+              <div class="overlay">
+                  <h3 class="title">Digita Umami</h3>
+                  <p class="description">Menu Design (Figma) </p>
+                  <p class="size">2024</p>
+              </div>
+          </a>
+      </div>
+
+      <div class="artwork img12">
+          <a href="details/art12.html">
+              <img src="images/gallery/art12.jpg" alt="Gingerbread Men">
+              <div class="overlay">
+                  <h3 class="title">Gingerbread Men</h3>
+                  <p class="description">Stop Motion Animation </p>
+                  <p class="size">2m 32s | 2024</p>
+              </div>
+          </a>
+      </div>
+
+      <div class="artwork img13">
+          <a href="details/art13.html">
+              <img src="images/gallery/art13.png" alt="Moon Jellyfish">
+              <div class="overlay">
+                  <h3 class="title">Moon Jellyfish</h3>
+                  <p class="description">Oil Painting & Mixed Media </p>
+                  <p class="size">40 cm x 40 cm  | 2021</p>
+              </div>
+          </a>
+      </div>
+
+      <div class="artwork img14">
+          <a href="details/art14.html">
+              <img src="images/gallery/art14.jpg" alt="Rabbit">
+              <div class="overlay">
+                  <h3 class="title"> Rabbit</h3>
+                  <p class="description">Etching </p>
+                  <p class="size">6 in x 6 in  | 2025</p>
+              </div>
+          </a>
+      </div>
+
+      <div class="artwork img15">
+          <a href="details/art15.html">
+              <img src="images/gallery/art15.jpg" alt="Waterlilies Reimagined">
+              <div class="overlay">
+                  <h3 class="title">Waterlilies Reimagined</h3>
+                  <p class="description">Oil Painting</p>
+                  <p class="size">100 cm x 100 cm  | 2021</p>
+              </div>
+          </a>
+      </div>
+
+      <div class="artwork img16">
+          <a href="details/art16.html">
+              <img src="images/gallery/art16.jpg" alt="Guess the Character">
+              <div class="overlay">
+                  <h3 class="title">Guess the Character</h3>
+                  <p class="description">Interactive game (p5.js)  </p>
+                  <p class="size">2024</p>
+              </div>
+          </a>
+      </div>
+
+      <div class="artwork img17">
+          <a href="details/art17.html">
+              <img src="images/gallery/art17.jpg" alt="Logo">
+              <div class="overlay">
+                  <h3 class="title">UPKP</h3>
+                  <p class="description">Logo Design (Adobe InDesign) </p>
+                  <p class="size">3.5 x 2 in | 2024</p>
+              </div>
+          </a>
+      </div>
+
+      <div class="gallery-spacer"></div>
+    </section>
+  
+  
+    <!-- Footer -->
+    <footer class="site-footer">
+        <img src="images/gallery/sea.png" alt="waves and lighthouse" class="footer-image" />
+    
+        <div class="footer-overlay">
+            <p class="footer-left">© 2025 Lydia He. All rights reserved.</p>
+            <div class="footer-right">
+              <a href="https://www.instagram.com/unnioo_h20" target="_blank">
+                <img src="images/gallery/instagram.png" alt="Instagram" />
+              </a>
+              <a href="https://www.github.com/Lydia0420" target="_blank">
+                <img src="images/gallery/github.png" alt="github" />
+              </a>
+              <a href="mailto:nh2530@nyu.edu" target="_blank">
+                <img src="images/gallery/mail.png" alt="Email" />
+              </a>
+            </div>
+        </div>
+    </footer>
+
+  <script src="./script.js"></script>
+</body>
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elementary School Artwork</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../styles/styles_elementary.css"> 
+</head>
+
+<body>
+   <nav>
+        <div class="logo">
+            <a href="../index.html">Lydia's Portfolio</a>
+        </div>
+        <ul>
+            <li><a href="../index.html#gallery">Work</a></li>
+            <li><a href="../details/about.html">About</a></li>
+            <li><a href="../details/contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <h1>Elementary School Artwork</h1>
+    <p class="description">
+        An unexpected encounter led me to my first mentor in traditional Chinese painting, an art form known as "Danqing", where ink and brush breathe life into paper.
+        Under my teacher's guidance, I embarked on my artistic journey, immersing myself in the graceful yet disciplined world of ink wash painting. 
+        I learned to balance light and dark, motion and stillness, capturing fleeting moments of nature with delicate strokes. 
+        This experience marked the true beginning of my exploration in the arts.
+    </p>
+
+    <div class="elementary-container">
+        <div class="elementary-images">
+            <img src="../images/elementary/elementary_01.jpg" alt="Elementary Artwork 1">
+            <img src="../images/elementary/elementary_02.jpg" alt="Elementary Artwork 2">
+            <img src="../images/elementary/elementary_03.jpg" alt="Elementary Artwork 3">
+            <img src="../images/elementary/elementary_04.jpg" alt="Elementary Artwork 4">
+            <img src="../images/elementary/elementary_05.jpg" alt="Elementary Artwork 5">
+            <img src="../images/elementary/elementary_06.jpg" alt="Elementary Artwork 6">
+            <img src="../images/elementary/elementary_07.jpg" alt="Elementary Artwork 7">
+            <img src="../images/elementary/elementary_08.jpg" alt="Elementary Artwork 8">
+            <img src="../images/elementary/elementary_09.jpg" alt="Elementary Artwork 9">
+            <img src="../images/elementary/elementary_10.jpg" alt="Elementary Artwork 10">
+            <img src="../images/elementary/elementary_11.jpg" alt="Elementary Artwork 11">
+            <img src="../images/elementary/elementary_12.jpg" alt="Elementary Artwork 12">
+            <img src="../images/elementary/elementary_13.jpg" alt="Elementary Artwork 13">
+            <img src="../images/elementary/elementary_14.jpg" alt="Elementary Artwork 14">
+            <img src="../images/elementary/elementary_15.jpg" alt="Elementary Artwork 15">
+            <img src="../images/elementary/elementary_16.jpg" alt="Elementary Artwork 16">
+            <img src="../images/elementary/elementary_17.jpg" alt="Elementary Artwork 17">
+            <img src="../images/elementary/elementary_18.jpg" alt="Elementary Artwork 18">
+            <img src="../images/elementary/elementary_19.jpg" alt="Elementary Artwork 19">
+            <img src="../images/elementary/elementary_20.jpg" alt="Elementary Artwork 20">
+            <img src="../images/elementary/elementary_21.jpg" alt="Elementary Artwork 21">
+            <img src="../images/elementary/elementary_22.jpg" alt="Elementary Artwork 22">    
+        </div>
+    </div>
+
+  <!-- carousel -->
+  <div id="lightbox" class="lightbox hidden">
+    <div class="lightbox-carousel"></div>
+    <button class="lightbox-close">✕</button>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script>
+    const galleryImages = document.querySelectorAll(".elementary-images img");
+    const lightbox = document.getElementById("lightbox");
+    const carousel = document.querySelector(".lightbox-carousel");
+    const closeBtn = document.querySelector(".lightbox-close");
+  
+    let currentIndex = 0;
+    let lightboxImgs = [];
+    let lightboxWrappers = [];
+  
+    galleryImages.forEach((img, index) => {
+      img.addEventListener("click", () => {
+        currentIndex = index;
+        openLightbox();
+      });
+    });
+  
+    function openLightbox() {
+      carousel.innerHTML = "";
+      lightboxImgs = [];
+      lightboxWrappers = [];
+  
+      galleryImages.forEach((img, i) => {
+        const newImg = document.createElement("img");
+        newImg.src = img.src;
+  
+        const wrapper = document.createElement("div");
+        wrapper.classList.add("carousel-wrapper");
+        wrapper.appendChild(newImg);
+  
+        carousel.appendChild(wrapper);
+  
+        lightboxImgs.push(newImg);
+        lightboxWrappers.push(wrapper);
+      });
+  
+      updateCarousel();
+      lightbox.classList.remove("hidden");
+    }
+  
+    function updateCarousel() {
+      const spacing = 300;
+      const depth = 200;
+      const maxVisible = 2;
+  
+      lightboxWrappers.forEach((wrapper, i) => {
+        const offset = i - currentIndex;
+        const img = lightboxImgs[i];
+        img.classList.remove("active");
+  
+        if (Math.abs(offset) > maxVisible) {
+          gsap.to(wrapper, {
+            opacity: 0,
+            duration: 0.4,
+            pointerEvents: "none"
+          });
+        } else {
+          const scale = offset === 0 ? 1.1 : 0.85;
+          const x = offset * spacing;
+          const z = -Math.abs(offset) * depth;
+          const rotateY = offset * -45;
+          const opacity = offset === 0 ? 1 : 0.4;
+  
+          gsap.to(wrapper, {
+            x: x,
+            z: z,
+            scale: scale,
+            rotateY: rotateY,
+            opacity: opacity,
+            duration: 0.6,
+            ease: "power3.out"
+          });
+  
+          if (offset === 0) {
+            img.classList.add("active");
+          }
+        }
+      });
+    }
+  
+    lightbox.addEventListener("click", (e) => {
+      if (e.target.classList.contains("lightbox-close")) return;
+  
+      const mid = window.innerWidth / 2;
+      if (e.clientX < mid && currentIndex > 0) {
+        currentIndex--;
+        updateCarousel();
+      } else if (e.clientX >= mid && currentIndex < lightboxImgs.length - 1) {
+        currentIndex++;
+        updateCarousel();
+      }
+    });
+  
+    closeBtn.addEventListener("click", () => {
+      lightbox.classList.add("hidden");
+    });
+
+    document.querySelector(".logo a").addEventListener("click", (e) => {
+    e.preventDefault(); 
+    window.location.href = "../index.html#return"; 
+    });
+  </script>
+</body>
+</html>

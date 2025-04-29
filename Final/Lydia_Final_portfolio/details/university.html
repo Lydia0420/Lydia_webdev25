@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>University Artwork</title>
+  <link rel="stylesheet" href="../styles/styles_university.css">
+</head>
+<body>
+  <nav>
+    <div class="logo">
+      <a href="../index.html">Lydia's Portfolio</a>
+    </div>
+    <ul>
+      <li><a href="../index.html#gallery">Work</a></li>
+      <li><a href="../details/about.html">About</a></li>
+      <li><a href="../details/contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <h1>University Artwork</h1>
+  <p class="description">
+    Entering university marked a turning point in my artistic journey, expanding my creative horizons beyond traditional mediums.  
+    I explored diverse artistic disciplines, delving into printmaking, where the meticulous process of carving and inking introduced a new dimension to my work.   
+    Simultaneously, I ventured into the realm of code-based art, where logic and creativity intertwined, 
+    designing game prototypes, developing UI/UX for apps, and bringing ideas to life through digital interfaces.   
+    Additionally, I experimented with stop-motion animation, discovering the patience and precision required to infuse still frames with motion.   
+    Each new medium became a tool for storytelling, transforming concepts into immersive visual experiences...
+  </p>
+
+  <div class="gallery">
+    <div class="row">
+      <div class="artwork"><img src="../images/university/university_01.jpg" alt="Artwork 1"></div>
+      <div class="artwork"><img src="../images/university/university_02.jpg" alt="Artwork 2"></div>
+    </div>
+    <div class="row single">
+      <div class="artwork"><img src="../images/university/university_03.jpg" alt="Artwork 3"></div>
+    </div>
+    <div class="row">
+      <div class="artwork"><img src="../images/university/university_04.jpg" alt="Artwork 4"></div>
+      <div class="artwork"><img src="../images/university/university_05.jpg" alt="Artwork 5"></div>
+    </div>
+    <div class="row">
+      <div class="artwork"><img src="../images/university/university_06.jpg" alt="Artwork 6"></div>
+      <div class="artwork"><img src="../images/university/university_07.jpg" alt="Artwork 7"></div>
+    </div>
+    <div class="row single">
+      <div class="artwork"><img src="../images/university/university_08.jpg" alt="Artwork 8"></div>
+    </div>
+  </div>
+
+  <!-- carousel -->
+  <div class="lightbox hidden" id="lightbox">
+    <div class="carousel-wrapper" id="carousel-wrapper"></div>
+    <button class="lightbox-close" id="close-carousel">✕</button>
+  </div>
+
+  <script>
+    const galleryImages = document.querySelectorAll(".gallery img");
+    const lightbox = document.getElementById("lightbox");
+    const carouselWrapper = document.getElementById("carousel-wrapper");
+    const closeBtn = document.getElementById("close-carousel");
+
+    let allImagePaths = Array.from(galleryImages).map(img => img.src);
+    let currentIndex = 0;
+
+    function openLightbox(index) {
+      currentIndex = index;
+      carouselWrapper.innerHTML = "";
+
+      allImagePaths.forEach((src, i) => {
+        const img = document.createElement("img");
+        img.src = src;
+        img.classList.add("carousel-image");
+        if (i === currentIndex) {
+          img.classList.add("active");
+        } else {
+          img.classList.add("thumbnail");
+        }
+        img.addEventListener("click", () => updateCarousel(i));
+        carouselWrapper.appendChild(img);
+      });
+
+      lightbox.classList.remove("hidden");
+      setTimeout(() => centerImage(currentIndex), 50);
+    }
+
+    function updateCarousel(index) {
+      currentIndex = index;
+      const images = carouselWrapper.querySelectorAll(".carousel-image");
+      images.forEach((img, i) => {
+        img.classList.remove("active", "thumbnail");
+        if (i === index) {
+          img.classList.add("active");
+        } else {
+          img.classList.add("thumbnail");
+        }
+      });
+      centerImage(index);
+    }
+
+    function centerImage(index) {
+      const wrapper = document.getElementById("carousel-wrapper");
+      const images = wrapper.querySelectorAll(".carousel-image");
+      const target = images[index];
+      const wrapperRect = wrapper.getBoundingClientRect();
+      const targetRect = target.getBoundingClientRect();
+      const scrollOffset = target.offsetLeft - (wrapper.offsetWidth / 2) + (target.offsetWidth / 2);
+      wrapper.scrollTo({ left: scrollOffset, behavior: "smooth" });
+    }
+
+    galleryImages.forEach((img, i) => {
+      img.addEventListener("click", () => openLightbox(i));
+    });
+
+    closeBtn.addEventListener("click", () => {
+      lightbox.classList.add("hidden");
+    });
+
+    // Click on the areas on both sides of the screen to switch the image
+    lightbox.addEventListener("click", (e) => {
+        const clickX = e.clientX;
+        const screenMid = window.innerWidth / 2;
+
+        if (e.target.tagName.toLowerCase() === 'img' || e.target.id === 'close-carousel') return;
+
+        if (clickX < screenMid && currentIndex > 0) {
+            updateCarousel(currentIndex - 1);
+        } else if (clickX >= screenMid && currentIndex < allImagePaths.length - 1) {
+            updateCarousel(currentIndex + 1);
+        }
+    });
+
+    document.querySelector(".logo a").addEventListener("click", (e) => {
+    e.preventDefault(); 
+    window.location.href = "../index.html#return"; 
+    });
+  </script>
+</body>
+</html>
