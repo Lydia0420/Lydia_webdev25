@@ -19,16 +19,30 @@ From childhood to the present,focusing on a different art form at each stage of 
 - About Page - add timeline
 
 ## 3.Show snippet of code 
-- I used a horizontal scrolling gallery for art8 process images.
-- By applying overflow-x: auto;, I enabled a horizontal scrollbar when the content exceeded the viewport width.
+- I used this to record which section the user is looking at, When you’re inside the intro part, the navigation bar stays white, But once you scroll past it, it turns dark，to match the white background.
+and if you at an image in the timeline, the bar turns white.
+- For Homepage and About page.
 
-.process-gallery {
-    display:flex; /* Aligns images in a single row. */
-    gap: 10px;
-    overflow-x: auto; /* Adds a horizontal scrollbar when content overflows */
-    padding: 10px;
-    scroll-snap-type: x mandatory; /* Forces the scroll to snap to images */
-}
+// change Nav color
+const nav = document.querySelector("nav");
+const frameSection = document.getElementById("frame-section"); 
+const timeline = document.getElementById("timeline-section");
+
+// Intro animation - white, other - black
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        nav.classList.remove("nav-dark"); // Intro movie：white
+      } else {
+        nav.classList.add("nav-dark"); // leave movie：black
+      }
+    });
+  },
+  { threshold: 0.1 }
+);
+observer.observe(frameSection);
+
 
 ## 4. I learned in order to accomplish the project
 - How to build frame-by-frame animations from scratch

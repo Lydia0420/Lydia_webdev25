@@ -362,9 +362,9 @@ const observer = new IntersectionObserver(
   (entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        nav.classList.remove("nav-dark"); 
+        nav.classList.remove("nav-dark"); // Intro movie：white
       } else {
-        nav.classList.add("nav-dark"); 
+        nav.classList.add("nav-dark"); // leave movie：black
       }
     });
   },
